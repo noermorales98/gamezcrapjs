@@ -24,7 +24,7 @@ function Home() {
                                                     </div>
                                                     
                                                     <div className="col-auto">
-                                                        <button id="button" className="btn btn-lg btn-search" type="submit">Search</button>
+                                                        <button id="button" className="btn btn-lg btn-search" type="submit">Buscar</button>
                                                     </div>
                                                     
                                                 </div>
