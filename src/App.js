@@ -9,16 +9,23 @@ import { Contacto } from './pages/contacto/Contacto'
 import './App.css';
 
 import { Routes, Route } from 'react-router-dom'
+import Login from './pages/login/Login';
 
 function App() {
   return (
     <div className='home-page'>
       <Header />
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/acerca' element={<Acerca />} />
-        <Route path='/funciona' element={<Funciona />} />
-        <Route path='/contacto' element={<Contacto />} />
+        <Route path='/'>
+          <Route path='' element={<Home />} />
+          <Route path='/acerca' element={<Acerca />} />
+          <Route path='/funciona' element={<Funciona />} />
+          <Route path='/contacto' element={<Contacto />} />
+        </Route>
+        <Route exact path='/login'>
+          <Route path='' element={<Login />} />
+        </Route>
+        <Route path='*' element={<div className='container text-white'><h1>404: Not Found</h1></div>} />
       </Routes>
     </div>
   );

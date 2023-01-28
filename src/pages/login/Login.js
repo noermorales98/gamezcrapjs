@@ -1,6 +1,6 @@
 export function Login() {
   return (
-    <div>Login</div>
+    <div className="container text-white">Login</div>
   )
 }
 
