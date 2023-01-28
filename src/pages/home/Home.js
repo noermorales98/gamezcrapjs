@@ -9,7 +9,7 @@ function Home() {
                 <div className="container d-flex justify-content-center text-white">
                     <div className="row d-flex align-self-center w-100">
                         <div id="titulo" className="col d-flex flex-column justify-content-center align-items-center gap-2">
-                            <h1 className="poppins">Encuentra los mejores ofertas de tus juegos favoritos</h1>
+                            <h1 className="poppins">Encuentra las mejores ofertas de tus juegos favoritos</h1>
                             <div className="container d-flex align-items-center m-0 p-0">
                                 <br />
                                     <div className="row  justify-content-between m-0 p-0 w-100">

@@ -1,5 +1,5 @@
 export function Acerca() {
     return(
-        <div className="text-white">ACERCA DE NOSOTROS PAGE</div>
+        <div className="text-white container">ACERCA DE NOSOTROS PAGE</div>
     )
 }
