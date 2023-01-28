@@ -1,17 +1,18 @@
 .card-body{
-    background: white;
+    background: var(--second-color-light);
     border-radius: 5rem;
     padding: 1rem!important;
 }
 
 #button{
-    background: #710c84;
-    color: white;
+    background: var(--main-color);
+    color: var(--second-color-light);
     border-radius: 5rem;
 }
 
 .form-control{
     border: none!important;
+    background-color: var(--second-color-light)!important;
 }
 
 .form-control:focus{
