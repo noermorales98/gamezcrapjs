@@ -1,5 +1,6 @@
 import './Home.css'
 import imagen from "../../sources/img/GameZcrap.png";
+
 function Home() {
     return (
         <div className="container">

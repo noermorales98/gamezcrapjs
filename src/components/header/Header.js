@@ -1,5 +1,7 @@
 import './Header.css'
 
+import { Link } from 'react-router-dom'
+
 function Header() {
   return (
     <header>
@@ -7,7 +9,7 @@ function Header() {
             <div className="container">
                 <div className="row  d-flex justify-content-center align-items-center w-100">
                     <div className="col">
-                        <a className="navbar-brand text-white" href="#">GameZcrapFront</a>
+                        <Link className="navbar-brand text-white" to={"/"}>GameZcrapFront</Link>
                     </div>
 
                     <div className="col-5">
@@ -15,17 +17,18 @@ function Header() {
                             <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                            <ul className="navbar-nav flex-grow-1 justify-content-between">
-                                <li className="nav-item">
-                                    <a className="nav-link text-white" href="#">Acerca de</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link text-white" href="#">¿Cómo funciona?</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link text-white" href="#">Contáctanos</a>
-                                </li>
-                            </ul>
+
+                                <ul className="navbar-nav flex-grow-1 justify-content-between">
+                                    <li className="nav-item">
+                                        <Link className='nav-link text-white' to={"/acerca"}>Acerca de</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className='nav-link text-white' to={"/funciona"}>¿Cómo funciona?</Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link className='nav-link text-white' to={"/contacto"}>Contáctanos</Link>
+                                    </li>
+                                </ul>
 
                         </div>
                     </div>
