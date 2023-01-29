@@ -1,0 +1,38 @@
+.about__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    border-radius: 2rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.about__h1{
+    margin-bottom: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: bold;
+}
+
+.about__h1 span{
+    color: #00b6cd;
+}
+
+.about__p{
+    width: 70%;
+    font-size: 2rem;
+}
+
+.about__icon{
+    margin-bottom: 3rem;
+}
+
+.about__icon-svg{
+    font-size: 3rem;
+    background-color: #00b6cd;
+    padding: 0.5rem 1.3rem;
+    border-radius: 50%;
+}
