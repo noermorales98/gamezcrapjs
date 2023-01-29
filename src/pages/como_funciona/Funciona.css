@@ -1,0 +1,46 @@
+.funciona__container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70%;
+    border-radius: 2rem;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.funciona__icon{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.funciona__icon-svg{
+    font-size: 3rem;
+    background-color: #cf27b0;
+    padding: 1.5rem;
+    border-radius: 50%;
+}
+
+.funciona__icon i{
+    display: flex;
+    align-content: stretch;
+    align-items: stretch;
+    justify-content: center;
+}
+
+.funciona__p{
+    width: 70%;
+    font-size: 2rem;
+}
+
+.funciona__container h1{
+    margin-bottom: 3rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: bold;
+}
+
+.funciona__container .text-center span{
+    color: #cf27b0;
+}
