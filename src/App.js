@@ -11,11 +11,19 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom'
 import Login from './pages/login/Login';
 
+
+const Layout = (tag) => {
+  return(
+  <div className='home-page'>
+    {tag}
+  </div>
+  )};
+
 function App() {
   return (
-    <div className='home-page'>
+    <>
       <Routes>
-        <Route path='/' element={<Header />} >
+        <Route path='/' element={Layout(<Header />)} >
           <Route path='' element={<Home />} />
           <Route path='acerca' element={<Acerca />} />
           <Route path='funciona' element={<Funciona />} />
@@ -26,7 +34,7 @@ function App() {
         
         <Route path='*' element={<div className='container text-white'><h1>404: Not Found</h1></div>} />
       </Routes>
-    </div>
+    </>
   );
 }
 
