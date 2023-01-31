@@ -8,7 +8,7 @@ import { Contacto } from './pages/contacto/Contacto'
 
 import './App.css';
 
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/login/Login';
 
 
@@ -32,7 +32,7 @@ function App() {
 
         <Route exact path='/login' element={<Login />} />
         
-        <Route path='*' element={<div className='container text-white'><h1>404: Not Found</h1></div>} />
+        <Route path='*' element={<Navigate to={"/"}/>} />
       </Routes>
     </>
   );
