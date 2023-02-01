@@ -5,8 +5,11 @@ import Home from './pages/home/Home';
 import { Acerca } from './pages/acerca_de/Acerca'
 import { Funciona } from './pages/como_funciona/Funciona'
 import { Contacto } from './pages/contacto/Contacto'
+import { Login } from './pages/login/Login';
+import { Register } from './pages/registro/Register';
 
 import './App.css';
+import { LoginProvider } from './context/LoginContext';
 
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/login/Login';
@@ -25,19 +28,21 @@ const Layout = (tag) => {
 function App() {
   return (
     <>
-      <Routes>
-        <Route path='/' element={Layout(<Header />)} >
-          <Route path='' element={<Home />} />
-          <Route path='acerca' element={<Acerca />} />
-          <Route path='funciona' element={<Funciona />} />
-          <Route path='contacto' element={<Contacto />} />
-        </Route>
-        <Route exact path='/login' element={<Login />} />
-        <Route path='/ajustes' element={<Ajustes />} />
-        <Route path='/favoritos' element={<Favoritos />} />
-        
-        <Route path='*' element={<Navigate to={"/"} />} />
-      </Routes>
+      <LoginProvider>
+        <Routes>
+          <Route path='/' element={Layout(<Header />)} >
+            <Route path='' element={<Home />} />
+            <Route path='acerca' element={<Acerca />} />
+            <Route path='funciona' element={<Funciona />} />
+            <Route path='contacto' element={<Contacto />} />
+          </Route>
+
+          <Route exact path='/login' element={<Login />} />
+          <Route exact path='/registro' element={<Register />} />
+          
+          <Route path='*' element={<Navigate to={"/"}/>} />
+        </Routes>
+      </LoginProvider>
     </>
   );
 }
