@@ -10,7 +10,7 @@ function Header() {
                 <div className="container">
                     <div className="row  d-flex justify-content-center align-items-center w-100">
                         <div className="col">
-                            <Link className="navbar-brand text-white" to={"/"}>GameZcrapFront</Link>
+                            <Link className="navbar-brand text-white" to={"/"}>GameZcrap</Link>
                         </div>
 
                         <div className="col-5">
