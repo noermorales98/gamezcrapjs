@@ -9,12 +9,17 @@
   --text-color-white: #ffffff;
 }
 
+html {
+  background-color: #010d17;
+}
+
 
 body {
   margin: 0;
   font-family: 'DM Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
 code {
