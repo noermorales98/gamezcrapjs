@@ -1,3 +1,15 @@
 .active{
     color: red !important;
 }
+
+.btn{
+    backdrop-filter: blur(10px);
+}
+
+.btn:hover{
+    box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.403);
+}
+
+header{
+    font-family: 'DM Sans', sans-serif;
+}
