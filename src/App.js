@@ -12,7 +12,6 @@ import './App.css';
 import { LoginProvider } from './context/LoginContext';
 
 import { Routes, Route, Navigate } from 'react-router-dom'
-import Login from './pages/login/Login';
 import Ajustes from './pages/ajustes/Ajustes';
 import Favoritos from './pages/favoritos/Favoritos';
 
@@ -39,7 +38,8 @@ function App() {
 
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/registro' element={<Register />} />
-          
+          <Route exact path='/ajustes' element={<Ajustes />} />
+          <Route exact path='/favoritos' element={<Favoritos />} />
           <Route path='*' element={<Navigate to={"/"}/>} />
         </Routes>
       </LoginProvider>
