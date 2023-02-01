@@ -3,51 +3,68 @@ import * as Yup from 'yup'
 import { Link } from 'react-router-dom'
 
 import { useLogin } from '../../context/LoginContext'
+import './Login.css'
 
 export function Login() {
 
   const { login } = useLogin()
 
   return (
-    <div className="container position-absolute top-50 start-50 p-3 d-flex flex-column bg-dark rounded-5 text-white" style={{transform:"translate(-50%, -50%)", width: "45vh", height: "60vh"}}>
-      <div className='h-25 d-flex justify-content-center align-items-center'>
-        <span>Login</span>
+    <div className='d-flex row login__container'>
+      <div className="col">
+        <div className="login__bg">
+          <div className="login__bg__text text-white">
+            <div className="login__card">
+              <h1 className="login__bg__text__title">Registrate para guardar tus juegos favoritos</h1>
+            </div>
+          </div>
+        </div>
       </div>
+      <div className="col">
+        <div className="login__form">
+        <div className="d-flex flex-column rounded-5 w-50 p-3 login__form-data">
+          <div className='justify-content-center align-items-center'>
+            <h1>Hey, Hola 👋</h1>
+            <span>Ingresa tu información para continuar</span>
+          </div>
 
-      <div className=''>
-        <Formik
-          initialValues={{ email: '', contraseña: '' }}
-          validationSchema={Yup.object({
-            email: Yup.string().required('Es necesario colocar un email'),
-            contraseña: Yup.string().required('Es necesario colocar la contraseña'),
-          })}
-          onSubmit={ async (values, actions) => {
-            await login(values)
+          <div className=''>
+            <Formik
+              initialValues={{ email: '', contraseña: '' }}
+              validationSchema={Yup.object({
+                email: Yup.string().required('Es necesario colocar un email'),
+                contraseña: Yup.string().required('Es necesario colocar la contraseña'),
+              })}
+              onSubmit={async (values, actions) => {
+                await login(values)
 
-            actions.setSubmitting(false)
-          }}
-          enableReinitialize
-        >
-          {({ handleSubmit }) => (
-            <Form className='d-flex flex-column' onSubmit={handleSubmit}>
-              <label htmlFor="email" className='text-white font-monospace'>Correo</label>
-              <Field name="email" placeholder="ejemplo@ejemplo.com" />
-              <ErrorMessage component="p" name="email" className='text-danger' />
+                actions.setSubmitting(false)
+              }}
+              enableReinitialize
+            >
+              {({ handleSubmit }) => (
+                <Form className='d-flex flex-column' onSubmit={handleSubmit}>
+                  <label htmlFor="email" className='font-monospace'>Correo</label>
+                  <Field name="email" placeholder="ejemplo@ejemplo.com" />
+                  <ErrorMessage component="p" name="email" className='text-danger' />
 
-              <label htmlFor="contraseña" className='text-white font-monospace'>Contraseña</label>
-              <Field name="contraseña" placeholder="Contraseña" />
-              <ErrorMessage component="p" name="contraseña" className='text-danger' />
+                  <label htmlFor="contraseña" className='font-monospace'>Contraseña</label>
+                  <Field name="contraseña" placeholder="Contraseña" />
+                  <ErrorMessage component="p" name="contraseña" className='text-danger' />
 
-              <button type='submit' className='btn bg-info text-dark mt-4'>Login</button>
-            </Form>
-          )}
-        </Formik>
-      </div>
+                  <button type='submit' className='btn mt-4'>Login</button>
+                </Form>
+              )}
+            </Formik>
+          </div>
 
 
-      <div className='fixed-bottom m-3'>
-        <hr />
-        <Link to={"/registro"} className="text-decoration-none btn bg-info w-100" >Crear una cuenta</Link>
+          <div>
+            <hr />
+            <Link to={"/registro"} className="btn mt-4 text-decoration-none" >Crear una cuenta</Link>
+          </div>
+        </div>
+        </div>
       </div>
     </div>
   )
