@@ -16,6 +16,8 @@ export function Login() {
           <div className="login__bg__text text-white">
             <div className="login__card">
               <h1 className="login__bg__text__title">Registrate para guardar tus juegos favoritos</h1>
+
+              <Link className='btn w-100 mt-4 bg-danger text-white' to={"/"}>Go home</Link>
             </div>
           </div>
         </div>

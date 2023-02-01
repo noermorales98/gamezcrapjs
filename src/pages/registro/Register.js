@@ -53,7 +53,7 @@ export function Register() {
                                     <Field name="password" placeholder="contraseña" />
                                     <ErrorMessage component="p" name="password" className='text-danger' />
 
-                                    <button type='submit' className='btn mt-4'>Login</button>
+                                    <button type='submit' className='btn mt-4'>Registrar</button>
                                 </Form>
                             )}
                         </Formik>
@@ -67,6 +67,8 @@ export function Register() {
                 <div className="login__bg__text text-white">
                     <div className="login__card">
                         <h1 className="login__bg__text__title">Registrate para guardar tus juegos favoritos</h1>
+
+                        <Link className='btn w-100 mt-4 bg-danger text-white' to={"/"}>Go home</Link>
                     </div>
                 </div>
             </div>
