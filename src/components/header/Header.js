@@ -10,7 +10,7 @@ function Header() {
                 <div className="container">
                     <div className="row  d-flex justify-content-center align-items-center w-100">
                         <div className="col">
-                            <Link className="navbar-brand text-white" to={"/"}>GameZcrapFront</Link>
+                            <Link className="navbar-brand text-white" to={"/"}>GameZcrap</Link>
                         </div>
 
                         <div className="col-5">
@@ -36,7 +36,7 @@ function Header() {
 
                         <div className="col text-center">
                             {/* <button className="btn btn-outline-light rounded-pill w-50 p-3">Iniciar Sesion</button> */}
-                            <Link  className="btn btn-outline-light rounded-pill w-50 p-3" to={"/login"}>Iniciar Sesion</Link>
+                            <Link  className="btn btn-outline-light rounded-pill w-50 p-3" to={"/login"}>Iniciar sesión</Link>
                         </div>
                     </div>
 

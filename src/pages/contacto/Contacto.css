@@ -1,53 +1,149 @@
-.contacto__container {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-  height: 70%;
+.contact__container {
+    padding: 2rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    width: 500px;
+    border: 2px solid rgba(255, 255, 255, 0.121);
+    background-color: rgba(255, 255, 255, 0.14);
 }
 
-.contacto__icon{
-    font-size: 3rem;
-    border: 1px solid white;
-    padding: 3.5rem 4.8rem;
+.contact__container:hover{
+    box-shadow: 1px 1px 20px rgba(255, 255, 255, 0.1);
+}
+
+.flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    gap: 5rem;
+    padding: 2rem;
+}
+
+.contact__redes {
+    display: flex;
+    gap: 2rem;
+}
+
+.contact__title {
+    margin-top: 2rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: white;
+    text-align: left;
+    margin-bottom: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact__title span {
+    color: #f36ded;
+    font-size: 3.8rem;
+    text-transform:capitalize;
+    font-weight: bolder;
+}
+
+.contacto__icon {
     border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+    padding: 3.8rem;
+    text-align: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.071);
+    backdrop-filter: blur(10px);
+}
+
+.contacto__icon {
+    text-decoration: none;
+    color: white;
+}
+
+.whatsapp:hover {
+    background-color: #25D366;
+    border: 1px solid #25D366;
+    color: white;
+    box-shadow: 1px 1px 20px rgba(0, 231, 73, 0.7);
+}
+
+.facebook:hover {
+    background-color: #4267B2;
+    border: 1px solid #4267B2;
+    color: white;
+    box-shadow: 1px 1px 20px rgba(0, 89, 231, 0.7);
+}
+
+.twitter:hover {
+    background-color: #1DA1F2;
+    border: 1px solid #1DA1F2;
+    color: white;
+    box-shadow: 1px 1px 20px rgba(0, 154, 231, 0.7);
+}
+
+.contact__form form {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-
-.contacto__icon:hover{
-    font-size: 3rem;
-    border: 1px solid white;
-    background-color: white;
-    color: #000;
-    padding: 3.5rem 4.8rem;
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.contact__form{
+    gap: 1rem;
+    padding: 0.5rem;
 }
 
-.contacto__icon i{
+.contact__form input {
+    margin: 1rem 0;
     padding: 1rem;
-    display: flex;
-    align-content: stretch;
-    align-items: stretch;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.121);
+    border-radius: 1rem;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.121);
+}
+
+.contact__form input::placeholder {
+    color: rgba(255, 255, 255, 0.585);
+}
+
+.contact__form textarea {
+    margin: 1rem 0;
+    padding: 1rem;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.121);
+    border-radius: 1rem;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.121);
+    resize: none;
+}
+
+.contact__form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.585);
+}
+
+
+.contact__form button {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 5rem;
+    border: 1px solid rgba(255, 255, 255, 0.121);
+    outline: none;
+    background-color: var(--main-color);
+    color: white;
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    width: 50%;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
     justify-content: center;
 }
-.contacto__icon-text{
-    font-size: 1rem;
+.contact__form button:hover {
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+    box-shadow: 1px 1px 20px rgba(255, 102, 245, 0.34);
 }
 
-.contacto__h1{
-    font-size: 3rem;
-    line-height: 3rem;
-    font-weight: bold;
-    padding: 3rem;
-}
-
-.contacto__h1 span{
-    color: #00b6cd;
+.contact__form button:active {
+    background-color: var(--text-color-black);
+    border: 1px solid var(--text-color-black);
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.34);
 }
