@@ -10,14 +10,17 @@ import './App.css';
 
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/login/Login';
+import Ajustes from './pages/ajustes/Ajustes';
+import Favoritos from './pages/favoritos/Favoritos';
 
 
 const Layout = (tag) => {
-  return(
-  <div className='home-page'>
-    {tag}
-  </div>
-  )};
+  return (
+    <div className='home-page'>
+      {tag}
+    </div>
+  )
+};
 
 function App() {
   return (
@@ -29,10 +32,11 @@ function App() {
           <Route path='funciona' element={<Funciona />} />
           <Route path='contacto' element={<Contacto />} />
         </Route>
-
         <Route exact path='/login' element={<Login />} />
+        <Route path='/ajustes' element={<Ajustes />} />
+        <Route path='/favoritos' element={<Favoritos />} />
         
-        <Route path='*' element={<Navigate to={"/"}/>} />
+        <Route path='*' element={<Navigate to={"/"} />} />
       </Routes>
     </>
   );
