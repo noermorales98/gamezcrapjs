@@ -34,13 +34,14 @@ function App() {
             <Route path='acerca' element={<Acerca />} />
             <Route path='funciona' element={<Funciona />} />
             <Route path='contacto' element={<Contacto />} />
+            <Route exact path='ajustes' element={<Ajustes />} />
+            <Route exact path='favoritos' element={<Favoritos />} />
           </Route>
 
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/registro' element={<Register />} />
-          <Route exact path='/ajustes' element={<Ajustes />} />
-          <Route exact path='/favoritos' element={<Favoritos />} />
-          <Route path='*' element={<Navigate to={"/"}/>} />
+
+          <Route path='*' element={<Navigate to={"/"} />} />
         </Routes>
       </LoginProvider>
     </>
