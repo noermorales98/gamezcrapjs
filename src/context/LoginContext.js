@@ -17,6 +17,8 @@ export const LoginProvider = ({ children }) => {
     const login = async (e) => {
         const res = await loginRequest(e)
 
+        console.log(res)
+
         if( !res.error ){
             navigate("/")
         }else{

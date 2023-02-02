@@ -58,6 +58,11 @@ export function Register() {
                             )}
                         </Formik>
                     </div>
+
+                    <div>
+                        <hr />
+                        <Link to={"/login"} className="btn mt-4 text-decoration-none" >Iniciar sesion</Link>
+                    </div>
                 </div>
             </div>
         </div>
