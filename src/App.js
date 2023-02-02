@@ -45,8 +45,7 @@ function App() {
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/registro' element={<Register />} />
 
-          {/* <Route path='*' element={<Navigate to={"/"} />} /> */}
-          <Route path='*' element={<h1>No se encuentra</h1>} />
+          <Route path='*' element={<Navigate to={"/"} />} />
         </Routes>
       </LoginProvider>
     </>
