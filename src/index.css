@@ -10,7 +10,8 @@
 }
 
 html {
-  background-color: #010d17;
+  background-image: radial-gradient(circle, #020f1a, #020e19, #020e18, #020d16, #020c15, #040a13, #050911, #06070f, #07050b, #060306, #040103, #000000);
+  background-color: #020F1A;
 }
 
 
@@ -22,7 +23,22 @@ body {
   padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #3b4f62; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: wheat;
 }

@@ -1,24 +1,26 @@
 .about__container{
+    background: url("../../sources/img/games2.png");
+    background-repeat: no-repeat;
+    background-position: center;
     display: flex;
+    background-size: contain;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 70%;
-    border-radius: 2rem;
+    height: 100vh;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.14);
-    padding: 5rem;
-    border: 2px solid rgba(255, 255, 255, 0.121);
+    /* backdrop-filter: blur(10px); */
+    /* background-color: rgba(255, 255, 255, 0.14); */
+    /* border: 2px solid rgba(255, 255, 255, 0.121); */
 }
 
 .about__h1{
-    margin-bottom: 3rem;
-    font-family: 'Poppins', sans-serif;
-    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.6rem;
     line-height: 3rem;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .about__h1 span{
@@ -26,8 +28,10 @@
 }
 
 .about__p{
-    width: 70%;
-    font-size: 2rem;
+    width: 23rem;
+    font-size: 17px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
 
 .about__icon{
@@ -36,7 +40,19 @@
 
 .about__icon-svg{
     font-size: 3rem;
-    background-color: #00b6cd;
-    padding: 0.5rem 1.3rem;
     border-radius: 50%;
+}
+
+.about__icon-svg img{
+    width: 100%;
+}
+
+.about__container a{
+    text-decoration: none;
+    color: #ff5669;
+    font-weight: bold;
+}
+
+.about__container a:hover{
+    color: #ff566aba;
 }

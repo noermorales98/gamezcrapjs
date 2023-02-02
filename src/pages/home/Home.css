@@ -1,8 +1,8 @@
 .home__container{
-    background: url('../../sources/img/image.webp');
+    background: url('../../sources/img/bg0.jpg');
     height: 100vh;
     background-size: cover;
-    background-position: left;
+    background-position: right top;
     background-repeat: no-repeat;
     margin-top: -106px;
     display: flex;
