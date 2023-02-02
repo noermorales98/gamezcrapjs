@@ -7,10 +7,11 @@
     border-radius: 2rem;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    backdrop-filter: blur(10px);
     padding: 1rem;
-    border: 2px solid rgba(255, 255, 255, 0.121);
-    background-color: rgba(255, 255, 255, 0.14);
+}
+
+.funciona__container h1{
+    margin-top: 3rem;
 }
 
 .funciona__icon{
@@ -20,16 +21,17 @@
 
 .funciona__icon-svg{
     font-size: 3rem;
-    background-color: #cf27b0;
-    padding: 1.5rem;
-    border-radius: 50%;
+    background-color: #b5b5b524;
+    backdrop-filter: blur(10px);
+    border: 1px solid #b5b5b524;
+    border-radius: 1rem;
+    width: 120px;
+    height: 120px;
+    padding: 1rem;
 }
 
 .funciona__icon i{
-    display: flex;
-    align-content: stretch;
-    align-items: stretch;
-    justify-content: center;
+    padding: 0rem;
 }
 
 .funciona__p{
@@ -47,4 +49,17 @@
 
 .funciona__container .text-center span{
     color: #cf27b0;
+}
+
+.funciona__col{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.funciona__col h2{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
 }

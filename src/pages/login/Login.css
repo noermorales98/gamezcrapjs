@@ -4,7 +4,8 @@
 }
 
 .login__bg{
-    background: url('../../sources/img/image.webp');
+    background: url('../../sources/img/bg01.png');
+    background-size: cover;
     height: 100%;
     width: 100%;
     display: flex;
