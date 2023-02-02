@@ -31,9 +31,14 @@ export const LoginProvider = ({ children }) => {
         console.log(res)
     }
 
+    const confirm_register = async (e) => {
+        
+    }
+
     return<LoginContext.Provider value={{
         login,
-        register
+        register,
+        confirm_register
     }}>
         { children }
     </LoginContext.Provider>
