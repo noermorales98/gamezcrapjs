@@ -3,7 +3,7 @@ import imagen from "../../sources/img/GameZcrap.png";
 
 function Home() {
     return (
-        <div className="container">
+        <div className="home__container">
             <main role="main" className="pb-3">
 
                 <div className="container d-flex justify-content-center text-white">
