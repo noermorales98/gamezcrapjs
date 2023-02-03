@@ -8,6 +8,10 @@
     font-family: 'Poppins', sans-serif;
     text-align: center;
     padding: 1rem;
+    background: url('../../sources/img/blur.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .funciona__container h1{

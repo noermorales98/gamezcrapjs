@@ -1,11 +1,11 @@
-.login__container{
+.register__container{
     height: 100vh;
     width: 100vw;
 }
 
-.login__bg{
+.register__bg{
     background: url('../../sources/img/bg01.png');
-    background-size: cover;
+    background-size: 100% 100%;
     height: 100%;
     width: 100%;
     display: flex;
@@ -18,24 +18,27 @@
     gap: 2rem;
 }
 
-.login__card{
+
+
+.register__card{
     background: rgba(255, 255, 255, 0.162);
-    padding: 5rem;
+    padding: 10rem 5rem;
     backdrop-filter: blur(10px);
     gap: 2rem;
 }
 
-.login__form{
+.register__form{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
 
-.login__form-data{
+
+.register__form-data{
     gap: 2rem;
 }
-.login__form input{
+.register__form input{
     width: 100%;
     height: 100%;
     border: 1px solid rgb(200, 200, 200);
@@ -46,7 +49,7 @@
     border-radius: 1rem;
 }
 
-.login__form button{
+.register__form button{
     background: #6094fa;
     color: rgb(255, 255, 255);
     border: none;
@@ -57,30 +60,13 @@
     font-weight: bold;
 }
 
-.login__form button:hover{
+.register__form button:hover{
     background: #3578ff;
     color: rgb(255, 255, 255);
 }
 
-.login__form button:focus{
+.register__form button:focus{
     background: #1c56ca!important;
     color: rgb(255, 255, 255)!important;
     border: 4px solid #b3ccff98!important;
-}
-
-.login__form a{
-    background: white;
-    color: rgb(113, 113, 113)!important;
-    border: 1px solid rgb(197, 197, 197);
-    outline: none;
-    padding: 1rem;
-    border-radius: 1rem;
-    cursor: pointer;
-    width: 100%;
-    font-weight: bold;
-}
-
-.login__form a:hover{
-    background: #f2f2f2;
-    color: rgb(113, 113, 113)!important;
 }

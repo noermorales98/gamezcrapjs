@@ -1,3 +1,8 @@
+.main__contact{
+    background: url('../../sources/img/blur1.png');
+    background-repeat: no-repeat;
+}
+
 .contact__container {
     padding: 2rem;
     border-radius: 1rem;

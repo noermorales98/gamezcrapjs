@@ -10,10 +10,10 @@ export function Register() {
   const { register } = useLogin()
 
   return (
-    <div className='d-flex row login__container'>
+    <div className='d-flex row register__container'>
         <div className="col">
-            <div className="login__form">
-                <div className="d-flex flex-column rounded-5 w-50 p-3 login__form-data">
+            <div className="register__form">
+                <div className="d-flex flex-column rounded-5 w-50 p-3 register__form-data">
                     <div className='justify-content-center align-items-center'>
                         <h1>Hey, Hola 👋</h1>
                         <span>Ingresa tu información para continuar</span>
@@ -68,10 +68,10 @@ export function Register() {
         </div>
 
         <div className="col">
-            <div className="login__bg">
-                <div className="login__bg__text text-white">
-                    <div className="login__card">
-                        <h1 className="login__bg__text__title">Registrate para guardar tus juegos favoritos</h1>
+            <div className="register__bg">
+                <div className="register__bg__text text-white">
+                    <div className="register__card">
+                        <h1 className="register__bg__text__title">Registrate para guardar tus juegos favoritos</h1>
 
                         <Link className='btn w-100 mt-4 bg-danger text-white' to={"/"}>Go home</Link>
                     </div>

@@ -18,7 +18,7 @@ export function Contacto() {
         e.target.reset();
     };
     return (
-        <div className='container'>
+        <div className='container main__contact'>
             <div className="flex">
                 <div className="flex-1 text-white">
                     <h2 className='contact__title'>Síguenos en nuestras <br /> <span>redes sociales</span></h2>
