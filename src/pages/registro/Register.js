@@ -10,7 +10,7 @@ export function Register() {
   const { register } = useLogin()
 
   return (
-    <div className='d-flex row register__container'>
+    <div className='d-flex register__container'>
         <div className="col">
             <div className="register__form">
                 <div className="d-flex flex-column rounded-5 w-50 p-3 register__form-data">
