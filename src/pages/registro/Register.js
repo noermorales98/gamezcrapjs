@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { Link } from 'react-router-dom'
+import React from 'react'
 
 import { useLogin } from '../../context/LoginContext'
 import './Register.css'
@@ -8,6 +9,10 @@ import './Register.css'
 export function Register() {
 
   const { register } = useLogin()
+  const [VentanaState, setVentanaState] = React.useState(0)
+  const ventana = e => {
+    setVentanaState(e)
+  }
 
   return (
     <div className='d-flex register__container'>
@@ -32,6 +37,7 @@ export function Register() {
                                 await register(values)
                                 actions.resetForm(true)
                                 actions.setSubmitting(false)
+                                ventana(1)
                             }}
                             enableReinitialize
                         >
@@ -80,6 +86,17 @@ export function Register() {
           </div>
         </div>
         </div>
+        <div className={VentanaState === 1 ? "popup" : "d-none"}>
+                <div className="popup__container blanco">
+                    <div className="popup__content">
+                        <i onClick={()=>{ventana(0)}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{fill: "#000"}}><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+                        </i>
+                        <h3>¡Gracias por registrarte!</h3>
+                        <p>Por favor, revisa tu correo electrónico para finalizar el proceso. Haz clic en el enlace que te hemos enviado.</p>
+                    </div>
+                </div>
+            </div>
     </div>
   )
 }
