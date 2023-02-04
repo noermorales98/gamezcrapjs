@@ -15,8 +15,8 @@ export function Register() {
             <div className="register__form">
                 <div className="d-flex flex-column rounded-5 w-50 p-3 register__form-data">
                     <div className='justify-content-center align-items-center'>
-                        <h1>Hey, Hola 👋</h1>
-                        <span>Ingresa tu información para continuar</span>
+                        <h1>Comienza aquí 👇</h1>
+                        <span>Ingresa tu información para registrar</span>
                     </div>
 
                     <div className=''>
@@ -46,11 +46,11 @@ export function Register() {
                                     <ErrorMessage component="p" name="apellidos" className='text-danger' />
 
                                     <label htmlFor="email" className='font-monospace m-1 mt-2'>Correo</label>
-                                    <Field name="email" placeholder="ejemplo@ejemplo.com" />
+                                    <Field type="email" name="email" placeholder="ejemplo@ejemplo.com" />
                                     <ErrorMessage component="p" name="email" className='text-danger' />
 
                                     <label htmlFor="password" className='font-monospace m-1 mt-2'>Contraseña</label>
-                                    <Field name="password" placeholder="contraseña" />
+                                    <Field type="password" name="password" placeholder="contraseña" />
                                     <ErrorMessage component="p" name="password" className='text-danger' />
 
                                     <button type='submit' className='btn mt-4'>Registrar</button>
@@ -59,24 +59,26 @@ export function Register() {
                         </Formik>
                     </div>
 
-                    <div>
+                    <div className='d-flex gap-2 justify-content-center'>
                         <hr />
-                        <Link to={"/login"} className="btn mt-4 text-decoration-none" >Iniciar sesion</Link>
+                        <p>¿Ya tienes cuenta? </p><Link to={"/login"} className="text-decoration-none">Iniciar sesion</Link>
                     </div>
                 </div>
             </div>
         </div>
 
         <div className="col">
-            <div className="register__bg">
-                <div className="register__bg__text text-white">
-                    <div className="register__card">
-                        <h1 className="register__bg__text__title">Registrate para guardar tus juegos favoritos</h1>
-
-                        <Link className='btn w-100 mt-4 bg-danger text-white' to={"/"}>Go home</Link>
-                    </div>
-                </div>
+        <div className="login__bg">
+          <div className="login__bg-text text-white">
+            <div className="login__card">
+              <h1 className="login__bg-title">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style={{ fill: "rgba(255, 255, 255, 1)" }}><path d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"></path></svg>
+                Registrate para guardar tus <br />
+                <span>juegos favoritos.</span>
+              </h1>
             </div>
+          </div>
+        </div>
         </div>
     </div>
   )

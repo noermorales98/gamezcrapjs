@@ -1,22 +1,22 @@
 import './Contacto.css';
-import { Formik } from 'formik';
 import React from 'react';
 import emailjs from '@emailjs/browser';
 
 export function Contacto() {
     const form = React.useRef();
+    const [successMessage, setSuccessMessage] = React.useState(0);
+    
+    const validate = values => {
+        setSuccessMessage(values);
+    }
 
     const sendEmail = (e) => {
         e.preventDefault();
-
         emailjs.sendForm('service_7vt41lg', 'template_hhh57za', form.current, 'HmRW7G5Pmx6vjnk-q')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
         e.target.reset();
+        validate(1);
     };
+
     return (
         <div className='container main__contact'>
             <div className="flex">
@@ -49,49 +49,23 @@ export function Contacto() {
                 <div className="contact__container text-white">
                     <div className="contact__form">
                         <h3>Contáctanos</h3>
-                        <Formik className="contact__form-formik" initialValues={{ nomnbre: '', correo: '', mensaje: '' }}
-                            onSubmit={(values, { setSubmitting }) => {
-                                setTimeout(() => {
-                                    alert(JSON.stringify(values, null, 2));
-                                    setSubmitting(false);
-                                }, 400);
-                            }}
-                        >
-
-                            {({
-                                values,
-                                errors,
-                                touched,
-                                handleChange,
-                                handleBlur,
-                                handleSubmit,
-                                isSubmitting,
-                                /* and other goodies */
-                            }) => (
-                                <form ref={form} onSubmit={(handleSubmit, sendEmail)}>
-                                    <input
+                        <form ref={form} onSubmit={sendEmail} classNamecontact__form-formik>
+                        <input
                                         type="name"
                                         name="name"
                                         id='name'
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.name}
+                                        required
                                         placeholder="Ingresa tu nombre"
                                     />
-                                    {errors.name && touched.name && errors.name}
-                                    <input
+                        <input
                                         type="email"
                                         name="email"
                                         id='email'
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        value={values.email}
+                                        required
                                         placeholder="Ingresa tu correo"
                                     />
-                                    {errors.email && touched.email && errors.email}
-                                    {/* // */}
-                                    <textarea placeholder='Ingresa tu mensaje' name="mensaje" id="mensaje" cols="10" rows="4" onChange={handleChange} onBlur={handleBlur} value={values.mensaje}></textarea>
-                                    <button type="submit" disabled={isSubmitting}>
+                        <textarea required placeholder='Ingresa tu mensaje' name="mensaje" id="mensaje" cols="10" rows="4"></textarea>
+                                    <button type="submit">
                                         Enviar
                                         <i>
                                             <svg
@@ -113,9 +87,18 @@ export function Contacto() {
                                             </svg>
                                         </i>
                                     </button>
-                                </form>)}
-
-                        </Formik>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div className={successMessage === 1 ? "popup" : "d-none"}>
+                <div className="popup__container">
+                    <div className="popup__content">
+                        <i onClick={()=>{validate(0)}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{fill: "#fff"}}><path d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"></path></svg>
+                        </i>
+                        <h3>Tu mensaje ha sido enviado</h3>
+                        <p>Gracias por comunicarte con nosotros, en breve te responderemos 😀</p>
                     </div>
                 </div>
             </div>

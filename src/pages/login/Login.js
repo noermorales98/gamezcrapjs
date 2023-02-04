@@ -17,7 +17,7 @@ export function Login() {
             <div className="login__card">
               <h1 className="login__bg-title">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" style={{ fill: "rgba(255, 255, 255, 1)" }}><path d="M5.536 21.886a1.004 1.004 0 0 0 1.033-.064l13-9a1 1 0 0 0 0-1.644l-13-9A1 1 0 0 0 5 3v18a1 1 0 0 0 .536.886z"></path></svg>
-                Registrate para guardar tus <br />
+                Inicia sesión para guardar tus <br />
                 <span>juegos favoritos.</span>
               </h1>
             </div>
@@ -70,7 +70,8 @@ export function Login() {
 
             <div className='login__registro'>
               <hr />
-              <Link to={"/registro"} className="btn mt-4 text-decoration-none" >Crear una cuenta</Link>
+              <span>¿No tienes una cuenta? </span>
+              <Link to={"/registro"} className="text-decoration-none" >Crear una cuenta</Link>
             </div>
           </div>
         </div>

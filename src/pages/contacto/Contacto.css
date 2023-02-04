@@ -152,3 +152,48 @@
     border: 1px solid var(--text-color-black);
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.34);
 }
+
+
+
+/***********popup************/
+
+.popup{
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    opacity: 1;
+    padding: 0 1rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: .3s;
+    /* visibility: hidden; */
+    z-index: 2;
+}
+
+.popup__container{
+    background-color: rgba(123, 123, 123, 0.377);
+    backdrop-filter: blur(10px);
+    color: rgb(255, 255, 255);
+    border-radius: 1.5rem;
+    padding: 4.5rem 2.5rem 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    width: 500px;
+    text-align: center;
+}
+
+.popup__container i{
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 2rem;
+    top: 1rem;
+}
+
+.d-none{
+    display: none;
+}
