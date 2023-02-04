@@ -30,7 +30,7 @@ export function Register() {
                             })}
                             onSubmit={async (values, actions) => {
                                 await register(values)
-
+                                actions.resetForm(true)
                                 actions.setSubmitting(false)
                             }}
                             enableReinitialize

@@ -3,6 +3,17 @@ import './Header.css'
 import { NavLink, Link, Outlet } from 'react-router-dom'
 
 function Header() {
+
+    const renderLoginButton = () => (
+        <Link  className="btn btn-outline-light rounded-pill w-50 p-3" to={"/login"}>Iniciar sesión</Link>
+    )
+
+    const renderUserData = () => (
+        <Link  className="btn btn-outline-light rounded-pill w-50 p-3" to={"/login"}>Usuario</Link>
+    )
+
+    const user = "asdasd"
+
   return (
     <>
         <header>
@@ -35,8 +46,12 @@ function Header() {
                         </div>
 
                         <div className="col text-center">
-                            {/* <button className="btn btn-outline-light rounded-pill w-50 p-3">Iniciar Sesion</button> */}
-                            <Link  className="btn btn-outline-light rounded-pill w-50 p-3" to={"/login"}>Iniciar sesión</Link>
+                            {
+                                user
+                                ? renderUserData()
+                                : renderLoginButton()
+                            }
+                            {/* <Link  className="btn btn-outline-light rounded-pill w-50 p-3" to={"/login"}>Iniciar sesión</Link> */}
                         </div>
                     </div>
 
