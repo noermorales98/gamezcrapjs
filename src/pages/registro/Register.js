@@ -30,7 +30,7 @@ export function Register() {
                             })}
                             onSubmit={async (values, actions) => {
                                 await register(values)
-
+                                actions.resetForm(true)
                                 actions.setSubmitting(false)
                             }}
                             enableReinitialize
@@ -46,11 +46,11 @@ export function Register() {
                                     <ErrorMessage component="p" name="apellidos" className='text-danger' />
 
                                     <label htmlFor="email" className='font-monospace m-1 mt-2'>Correo</label>
-                                    <Field name="email" placeholder="ejemplo@ejemplo.com" />
+                                    <Field type="email" name="email" placeholder="ejemplo@ejemplo.com" />
                                     <ErrorMessage component="p" name="email" className='text-danger' />
 
                                     <label htmlFor="password" className='font-monospace m-1 mt-2'>Contraseña</label>
-                                    <Field name="password" placeholder="contraseña" />
+                                    <Field type="password" name="password" placeholder="contraseña" />
                                     <ErrorMessage component="p" name="password" className='text-danger' />
 
                                     <button type='submit' className='btn mt-4'>Registrar</button>
