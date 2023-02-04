@@ -74,6 +74,11 @@ export function Register() {
         </div>
 
         <div className="col">
+            <div className=" position-fixed top-0 end-0 mt-4 me-4">
+                <Link to={"/"} className="text-decoration-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style={{ fill: "rgba(255, 255, 255, 1)" }}><path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z"></path></svg>
+                </Link>
+            </div>
         <div className="login__bg">
           <div className="login__bg-text text-white">
             <div className="login__card">

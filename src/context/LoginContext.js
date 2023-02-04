@@ -1,5 +1,5 @@
-import { loginRequest, registerRequest } from "../api/Login";
-import { createContext, useContext, useEffect, useState } from "react";
+import { loginRequest, registerRequest, confirmRegisterRequest } from "../api/Login";
+import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const LoginContext = createContext()
@@ -11,7 +11,7 @@ export const useLogin = () => {
 
 export const LoginProvider = ({ children }) => {
 
-    const [userData, setUserData] = useState([])
+    const [userData, setUserData] = useState([null])
     const navigate = useNavigate()
 
     const login = async (e) => {
@@ -32,13 +32,15 @@ export const LoginProvider = ({ children }) => {
     }
 
     const confirm_register = async (e) => {
-        
+        const res = await confirmRegisterRequest(e)
+        return res.status
     }
 
     return<LoginContext.Provider value={{
+        userData,
         login,
         register,
-        confirm_register
+        confirm_register,
     }}>
         { children }
     </LoginContext.Provider>

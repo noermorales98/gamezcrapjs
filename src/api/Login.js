@@ -6,4 +6,4 @@ export const loginRequest = async (userData) => await axios.post(`http://${serve
 
 export const registerRequest = async (userData) => await axios.post(`http://${server}/api/v1/auth/register`, userData)
 
-export const confirmRegister = async (token) => await axios.post(`http://${server}/api/v1/auth/register/confirmation/${token}`)
+export const confirmRegisterRequest = async (token) => await axios.post(`http://${server}/api/v1/auth/register/confirmation/${token}`)
