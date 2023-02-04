@@ -8,7 +8,7 @@ function Header() {
     const renderLoginButton = () => (
         <Link className="btn btn-outline-light rounded-pill w-50 p-3" to={"/login"}>Iniciar sesión</Link>
     )
-    const [menuState, setMenuState] = React.useState(1);
+    const [menuState, setMenuState] = React.useState(0);
     const usermenu = () => {
         setMenuState(menuState === 0 ? 1 : 0);
     }

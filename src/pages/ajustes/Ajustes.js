@@ -6,14 +6,10 @@ function Ajustes() {
             <div className="ajustes__container">
                 <div className="ajustes__container-flex">
                     <div className="d-flex">
-                        <div className="login__col ajustes__avatar">
-                            <img src={imagen} />
-                            <h3 className="ajuster__avatar-name">Noelí Rodríguez Morales</h3>
-                            <p className="ajustes__avatar-email">noe.rmorales98@gmail.com</p>
-                        </div>
                         <div className="login__col">
                             <div className="ajustes__form">
-                                <h3>Información personal</h3>
+                                <h1>Edita tu perfil</h1>
+                                <p>Información personal</p>
                                 <form action="">
                                     <div className="name">
                                         <label htmlFor="name">Nombre</label>

@@ -38,6 +38,8 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 500px;
+    margin: auto;
 }
 
 .ajustes__form-title {
@@ -66,7 +68,7 @@
 }
 
 .ajustes__form input::placeholder {
-    color: white;
+    color: rgba(255, 255, 255, 0.597);
 }
 
 .name,
