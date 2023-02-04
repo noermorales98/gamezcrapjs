@@ -13,3 +13,100 @@
 header{
     font-family: 'DM Sans', sans-serif;
 }
+
+.user3d{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.user3d img{
+    width: 2.2rem;
+    background-size: contain;
+}
+
+.usuario__header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.usuario__header:hover{
+    color: white;
+}
+
+.usuario__header p{
+    margin: 0!important;
+}
+
+
+.user__menu{
+    background: #ffffff24;
+    backdrop-filter: blur(10px);
+    width: 200px;
+    border: 1px solid #ffffff26;
+    height: 200px;
+    display: flex;
+    border-radius: .5rem;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    right: 5rem;
+    margin-top: 0.3rem;
+    z-index: 2;
+}
+
+.user__menu-item{
+    width: 100%;
+    display: flex;
+    height: 100%;
+    gap: .3rem;
+    padding: 1rem;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.user__list{
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    text-decoration: none;
+    height: 40px;
+    color: white;
+    padding: .4rem;
+    align-items: flex-end;
+}
+
+.user__list:hover{
+    color: white;
+    background: #99999959;
+    border-radius: 0.4rem;
+    padding: .4rem;
+}
+
+.user__list p{
+    margin: 0;
+}
+
+.user__exit:hover{
+    background: rgba(255, 0, 0, 0.314);
+}
+
+.d-none{
+    display: none;
+}
+
+
+.v-none{
+    visibility: hidden;   
+}
+
+.pointer{
+    cursor: pointer;
+}
