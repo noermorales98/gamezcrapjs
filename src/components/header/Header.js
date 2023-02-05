@@ -1,8 +1,8 @@
 import { NavLink, Link, Outlet } from 'react-router-dom'
 
 import './Header.css'
-import { renderUserData } from '../user_data/UserDataComponent'
-import { renderLoginButton } from '../login_button/LoginButtonComponent'
+import { RenderUserData } from '../user_data/UserDataComponent'
+import { RenderLoginButton } from '../login_button/LoginButtonComponent'
 import { useLogin } from '../../context/LoginContext'
 
 function Header() {
@@ -43,8 +43,8 @@ function Header() {
                             <div className="col text-center">
                                 {
                                     !userData
-                                        ? renderUserData()
-                                        : renderLoginButton()
+                                        ? RenderUserData()
+                                        : RenderLoginButton()
                                 }
                                 {/* <Link  className="btn btn-outline-light rounded-pill w-50 p-3" to={"/login"}>Iniciar sesión</Link> */}
                             </div>

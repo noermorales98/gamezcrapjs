@@ -1,11 +1,11 @@
 import user3d from '../../sources/img/user3d.png'
-import { useState } from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom'
 
 
-export function renderUserData() {
+export function RenderUserData() {
 
-    const [menuState, setMenuState] = useState(0);
+    const [menuState, setMenuState] = React.useState(0);
 
     const usermenu = () => {
         setMenuState(menuState === 0 ? 1 : 0);
