@@ -1,0 +1,47 @@
+.confirm__check{
+    background: url('../../sources/img/blur1.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+}
+
+.confirm__check p{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.confirm-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10rem;
+    height: 10rem;
+    background: #ffffff20;
+    border: 1px solid rgba(255, 255, 255, 0.214);
+    backdrop-filter: blur(10px);
+    border-radius: .5rem;
+    padding: 1rem;
+    
+    
+}
+
+.confirm-icon img{
+    width: 100%;
+    padding: 1.4rem;
+}
+
+.confirm__link{
+    color: #ff5669;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.confirm__link:hover{
+    color: #cb4859;
+}
