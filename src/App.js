@@ -13,6 +13,7 @@ import { LoginProvider } from './context/LoginContext';
 import { GamesProvider } from './context/GamesContext';
 
 import { Routes, Route, Navigate } from 'react-router-dom'
+
 import Ajustes from './pages/ajustes/Ajustes';
 import Favoritos from './pages/favoritos/Favoritos';
 import Confirm from './pages/confirm/Confirm';
@@ -27,10 +28,11 @@ const Layout = (tag) => {
 };
 
 function App() {
+
   return (
     <>
-      <GamesProvider>
-        <LoginProvider>
+      <LoginProvider>
+        <GamesProvider>
           <Routes>
             <Route path='/' element={Layout(<Header />)} >
               <Route path='' element={<Home />} />
@@ -47,8 +49,8 @@ function App() {
 
             <Route path='*' element={<Navigate to={"/"} />} />
           </Routes>
-        </LoginProvider>
-      </GamesProvider>
+        </GamesProvider>
+      </LoginProvider>
     </>
   );
 }

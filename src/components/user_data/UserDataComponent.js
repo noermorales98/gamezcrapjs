@@ -6,8 +6,8 @@ import { useLogin } from '../../context/LoginContext';
 
 export function RenderUserData() {
 
-    const [menuState, setMenuState] = React.useState(0);
     const { logout } = useLogin()
+    const [menuState, setMenuState] = React.useState(0);
 
     const usermenu = () => {
         setMenuState(menuState === 0 ? 1 : 0);

@@ -18,13 +18,9 @@ export const LoginProvider = ({ children }) => {
         const res = await loginRequest(e)
         window.localStorage.setItem('user', JSON.stringify(res.data.data))
 
-        console.log(res.data.data)
-
         if( !res.error ){
             setUser(res.data.data)
-            setTimeout(() => {
-                navigate("/")
-            }, 3000);
+            navigate("/")
         }else{
             alert(res.message)
         }
@@ -45,9 +41,13 @@ export const LoginProvider = ({ children }) => {
         return res.status
     }
 
-    // useEffect(() => {
-    //     console.log('User data state: ',user)
-    // }, [])
+    useEffect(() => {
+        if( window.localStorage.getItem('user') ){
+            const userData = JSON.parse(window.localStorage.getItem('user'))
+            setUser(userData)
+        }
+    }, [])
+
 
     return<LoginContext.Provider value={{
         user,
