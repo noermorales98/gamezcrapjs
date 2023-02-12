@@ -7,7 +7,7 @@ import { useLogin } from '../../context/LoginContext'
 
 function Header() {
 
-    const { userData } = useLogin()
+    const { user } = useLogin()
 
     return (
         <>
@@ -42,11 +42,10 @@ function Header() {
 
                             <div className="col text-center">
                                 {
-                                    !userData
+                                    user
                                         ? RenderUserData()
                                         : RenderLoginButton()
                                 }
-                                {/* <Link  className="btn btn-outline-light rounded-pill w-50 p-3" to={"/login"}>Iniciar sesión</Link> */}
                             </div>
                         </div>
 

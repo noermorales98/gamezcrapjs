@@ -1,7 +1,8 @@
 import './Home.css'
-import imagen from "../../sources/img/GameZcrap.png";
+// import imagen from "../../sources/img/GameZcrap.png";
 
 function Home() {
+
     return (
         <div className="home__container">
             <main role="main" className="pb-3">
