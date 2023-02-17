@@ -45,6 +45,8 @@ export const LoginProvider = ({ children }) => {
         if( window.localStorage.getItem('user') ){
             const userData = JSON.parse(window.localStorage.getItem('user'))
             setUser(userData)
+        }else{
+            setUser(null)
         }
     }, [])
 
