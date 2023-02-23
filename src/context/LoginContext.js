@@ -11,7 +11,9 @@ export const useLogin = () => {
 
 export const LoginProvider = ({ children }) => {
 
-    const [user, setUser] = useState(null)
+    const [user, setUser] = useState([])
+    const [token, setToken] = useState(null)
+
     const navigate = useNavigate()
 
     const login = async (e) => {
@@ -19,40 +21,48 @@ export const LoginProvider = ({ children }) => {
         window.localStorage.setItem('user', JSON.stringify(res.data.data))
 
         if( !res.error ){
-            setUser(res.data.data)
+            setUser(res.data.data.user)
+            setToken(res.data.data.token)
             navigate("/")
         }else{
             alert(res.message)
         }
     }
 
+
     const logout = () => {
         setUser(null)
         window.localStorage.removeItem('user')
     }
+
 
     const register = async (e) => {
         const res = await registerRequest(e)
         console.log(res)
     }
 
+
     const confirm_register = async (e) => {
         const res = await confirmRegisterRequest(e)
         return res.status
     }
 
+
     useEffect(() => {
         if( window.localStorage.getItem('user') ){
             const userData = JSON.parse(window.localStorage.getItem('user'))
-            setUser(userData)
+            setUser(userData.user)
+            setToken(userData.token)
         }else{
-            setUser(null)
+            setUser([])
+            setToken(null)
         }
     }, [])
 
 
     return<LoginContext.Provider value={{
         user,
+        token,
         login,
         logout,
         register,
