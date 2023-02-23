@@ -20,8 +20,7 @@ export function RenderUserData() {
                     <p>Carim</p>
                     <div className="user3d"><img src={user3d} /></div>
                 </div>
-            </span>
-            <div className={menuState === 1 ? "user__menu" : "d-none"}>
+                <div className={menuState === 1 ? "user__menu" : "d-none"}>
                 <div className="user__menu-item">
                     <Link onClick={usermenu} className='user__list' to={"/ajustes"}>
                         <i className="user__icon">
@@ -45,6 +44,7 @@ export function RenderUserData() {
 
                 </div>
             </div>
+            </span>
         </>
     )
 }
