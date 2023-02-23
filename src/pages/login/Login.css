@@ -1,9 +1,9 @@
-.login__container{
+.login__container {
     height: 100vh;
     width: 100vw;
 }
 
-.login__bg{
+.login__bg {
     background: url('../../sources/img/bg01.png');
     background-size: 100% 100%;
     height: 100%;
@@ -13,53 +13,54 @@
     padding: 5rem;
 }
 
-.login__bg-title{
+.login__bg-title {
     font-size: 3.2rem;
     font-weight: 300;
     font-family: 'Roboto', sans-serif;
 }
 
 
-.login__bg-title span{
+.login__bg-title span {
     color: #17174e;
     font-weight: 800;
     font-size: 3.5rem;
 }
 
-.login__icon{
+.login__icon {
     position: fixed;
     top: 1.8rem;
     left: 1.8rem;
-    background-color: none!important;
+    background-color: none !important;
 }
 
-.col{
-    padding: 0!important;
+.col {
+    padding: 0 !important;
     gap: 2rem;
 }
 
-.login__card{
+.login__card {
     background: rgba(255, 255, 255, 0.162);
     padding: 10rem 5rem;
     backdrop-filter: blur(10px);
     gap: 2rem;
 }
 
-.login__form{
+.login__form {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
 
-.login__form form{
+.login__form form {
     gap: 1rem;
 }
 
-.login__form-data{
+.login__form-data {
     gap: 2rem;
 }
-.login__form input{
+
+.login__form input {
     width: 100%;
     height: 100%;
     border: 1px solid rgb(200, 200, 200);
@@ -70,7 +71,7 @@
     border-radius: 1rem;
 }
 
-.login__form button{
+.login__form button {
     background: #6094fa;
     color: rgb(255, 255, 255);
     border: none;
@@ -81,23 +82,85 @@
     font-weight: bold;
 }
 
-.login__form button:hover{
+.login__form button:hover {
     background: #3578ff;
     color: rgb(255, 255, 255);
 }
 
-.login__form button:focus{
-    background: #1c56ca!important;
-    color: rgb(255, 255, 255)!important;
-    border: 4px solid #b3ccff98!important;
+.login__form button:focus {
+    background: #1c56ca !important;
+    color: rgb(255, 255, 255) !important;
+    border: 4px solid #b3ccff98 !important;
 }
 
-.login__registro{
+.login__registro {
     text-align: center;
 }
 
 
 
-.login__registro a:active{
+.login__registro a:active {
     border: none;
+}
+
+.login__col {
+    height: 100%;
+}
+
+.col {
+    height: 100%;
+}
+
+@media screen and (max-width: 1148px) {
+    .login__card {
+        padding: 4rem;
+    }
+}
+
+@media screen and (max-width: 1040px) {
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .login__bg {
+        height: 10vh;
+    }
+
+    .login__card {
+        padding: 0;
+        background: none;
+        backdrop-filter: none;
+    }
+
+    .login__bg-text {
+        width: 100%;
+    }
+
+    .login__bg-title {
+        font-size: 2rem;
+        font-weight: 300;
+        font-family: 'Roboto', sans-serif;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        white-space: nowrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .login__bg-title span {
+        font-size: 2rem;
+    }
+    .login__icon a{
+        display: block;
+        position: fixed;
+        top: 3rem;
+        left: 3rem;
+    }
+    .login__icon svg{
+        fill: rgb(0 0 0)!important;
+    }
+    .login__left{
+        display: none;
+    }
 }

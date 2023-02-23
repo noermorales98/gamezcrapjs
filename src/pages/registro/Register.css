@@ -75,3 +75,21 @@
     background: white;
     color: black;
 }
+
+
+
+
+@media screen and (max-width: 1040px) {
+    .return{
+        display: block!important;
+        position: fixed;
+        top: 3rem;
+        left: 3rem;
+    }
+    .return svg{
+        fill: black!important;
+    }
+    .login__bg{
+        display: none;
+    }
+}

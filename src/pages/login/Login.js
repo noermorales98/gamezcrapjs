@@ -11,7 +11,7 @@ export function Login() {
 
   return (
     <div className='d-flex row login__container'>
-      <div className="col">
+      <div className="col login__left">
         <div className="login__bg">
           <div className="login__bg-text text-white">
             <div className="login__card">
@@ -24,7 +24,7 @@ export function Login() {
           </div>
         </div>
       </div>
-      <div className="col">
+      <div className="col login__col">
         <div className="login__form">
           <div className="login__icon">
             <Link to={"/"} className="text-decoration-none">
