@@ -31,8 +31,8 @@ function App() {
 
   return (
     <>
-      <LoginProvider>
-        <GamesProvider>
+      <GamesProvider>
+        <LoginProvider>
           <Routes>
             <Route path='/' element={Layout(<Header />)} >
               <Route path='' element={<Home />} />
@@ -49,8 +49,8 @@ function App() {
 
             <Route path='*' element={<Navigate to={"/"} />} />
           </Routes>
-        </GamesProvider>
-      </LoginProvider>
+        </LoginProvider>
+      </GamesProvider>
     </>
   );
 }

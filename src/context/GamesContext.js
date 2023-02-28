@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 import { getGamesRequest } from "../api/Games";
 
@@ -15,8 +15,12 @@ export const GamesProvider = ({children}) => {
 
     const getGames = async () => {
         const res = await getGamesRequest()
-        console.log(res)
+        setGames(res.data.data)
     }
+
+    useEffect(() => {
+        getGames()
+    }, [])
 
     return <GamesContext.Provider value={{
         games,
