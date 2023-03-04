@@ -1,15 +1,16 @@
 import './Ajustes.css'
-import imagen from '../../sources/img/avatar.webp'
+// import imagen from '../../sources/img/avatar.webp'
 import { useLogin } from '../../context/LoginContext';
 
-import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { useEffect, useState } from 'react';
+import { Formik, Form, Field } from 'formik'
+// ErrorMessage
+// import { useEffect, useState } from 'react';
 
 
 function Ajustes() {
 
     const { user } = useLogin()
-    const [userData, setUserData] = useState()
+    // const [userData, setUserData] = useState()
 
     // useEffect(() => {
 
@@ -26,17 +27,17 @@ function Ajustes() {
                                 <h1>Edita tu perfil</h1>
                                 <p>Información personal</p>
                                 <Formik
-                                    initialValues={{ name: '', lastname: '', email: '' }}
+                                    initialValues={user}
                                 >
                                     <Form>
                                         <div className="name">
                                             <label htmlFor="name">Nombre</label>
-                                            <Field type="text" name="name" />
+                                            <Field type="text" name="nombres" />
                                         </div>
 
                                         <div className="apellido">
                                             <label htmlFor="lastname">Apellido</label>
-                                            <Field type="text" name="lastname" />
+                                            <Field type="text" name="apellidos" />
                                         </div>
 
                                         <div className="correo w-100">

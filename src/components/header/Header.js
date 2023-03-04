@@ -4,10 +4,12 @@ import './Header.css'
 import { RenderUserData } from '../user_data/UserDataComponent'
 import { RenderLoginButton } from '../login_button/LoginButtonComponent'
 import { useLogin } from '../../context/LoginContext'
+// import { RenderComponent } from '../RenderComponent'
 
 function Header() {
 
     const { user } = useLogin()
+    // isLoading
 
     return (
         <>
@@ -16,7 +18,7 @@ function Header() {
                     <div className="container">
                         <div className="row  d-flex justify-content-center align-items-center w-100">
                             <div className="col">
-                                <Link className="navbar-brand text-white" to={"/"}>GameZcrap</Link>
+                                <NavLink className={({isActive}) => (isActive ? 'navbar-brand logo_active' : 'navbar-brand text-white')} to={"/"}>GameZcrap</NavLink>
                             </div>
 
                             <div className="col-5">
@@ -27,7 +29,7 @@ function Header() {
 
                                     <ul className="navbar-nav flex-grow-1 justify-content-between">
                                         <li className="nav-item">
-                                            <NavLink className='nav-link text-white' to={"/acerca"}>Acerca de</NavLink>
+                                            <NavLink className={({isActive}) => (isActive ? 'nav-link active' : 'nav-link text-white')} to={"/acerca"}>Acerca de</NavLink>
                                         </li>
                                         <li className="nav-item">
                                             <NavLink className='nav-link text-white' to={"/funciona"}>¿Cómo funciona?</NavLink>
@@ -41,11 +43,26 @@ function Header() {
                             </div>
 
                             <div className="col text-center">
+
                                 {
                                     user
                                         ? RenderUserData()
                                         : RenderLoginButton()
                                 }
+
+                                {/* {
+                                    isLoading
+                                        ? <div>Cargando... </div>
+                                        : RenderComponent()
+                                } */}
+
+                                {/* {
+                                    isLoading
+                                        ? <div className="">Cargando...</div>
+                                        : Array.isArray(user)
+                                            ? RenderLoginButton()
+                                            : RenderUserData()
+                                } */}
                             </div>
                         </div>
 

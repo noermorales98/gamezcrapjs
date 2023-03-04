@@ -14,6 +14,8 @@ export const LoginProvider = ({ children }) => {
     const [user, setUser] = useState([])
     const [token, setToken] = useState(null)
 
+    const [isLoading, setIsLoading] = useState(true)
+
     const navigate = useNavigate()
 
     const login = async (e) => {
@@ -23,6 +25,7 @@ export const LoginProvider = ({ children }) => {
         if( !res.error ){
             setUser(res.data.data.user)
             setToken(res.data.data.token)
+            setIsLoading(false)
             navigate("/")
         }else{
             alert(res.message)
@@ -31,7 +34,7 @@ export const LoginProvider = ({ children }) => {
 
 
     const logout = () => {
-        setUser(null)
+        setUser([])
         window.localStorage.removeItem('user')
     }
 
@@ -53,14 +56,17 @@ export const LoginProvider = ({ children }) => {
             const userData = JSON.parse(window.localStorage.getItem('user'))
             setUser(userData.user)
             setToken(userData.token)
+            setIsLoading(false)
         }else{
             setUser([])
             setToken(null)
+            setIsLoading(false)
         }
     }, [])
 
 
     return<LoginContext.Provider value={{
+        isLoading,
         user,
         token,
         login,

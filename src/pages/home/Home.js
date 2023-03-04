@@ -5,6 +5,7 @@ import './Home.css'
 function Home() {
 
     const { games } = useGames();
+    console.log('Juegos Home: ', games)
 
     return (
         <>
