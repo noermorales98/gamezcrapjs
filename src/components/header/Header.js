@@ -45,9 +45,9 @@ function Header() {
                             <div className="col text-center">
 
                                 {
-                                    user
-                                        ? RenderUserData()
-                                        : RenderLoginButton()
+                                    user.length === 0
+                                        ? RenderLoginButton()
+                                        : RenderUserData()
                                 }
 
                                 {/* {

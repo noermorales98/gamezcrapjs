@@ -11,31 +11,33 @@ export const useLogin = () => {
 
 export const LoginProvider = ({ children }) => {
 
-    const [user, setUser] = useState([])
-    const [token, setToken] = useState(null)
-
-    const [isLoading, setIsLoading] = useState(true)
-
     const navigate = useNavigate()
 
+    const [user, setUser] = useState([])
+    const [token, setToken] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+
+    
     const login = async (e) => {
         const res = await loginRequest(e)
-        window.localStorage.setItem('user', JSON.stringify(res.data.data))
+        const { data } = res
 
-        if( !res.error ){
-            setUser(res.data.data.user)
-            setToken(res.data.data.token)
+        if( !data.error ){
+
+            window.localStorage.setItem('user', JSON.stringify(data.data))
+
+            setUser([data.data.user])
+            setToken(data.data.token)
+
             setIsLoading(false)
-            navigate("/")
+
+            navigate('/')
+
         }else{
-            alert(res.message)
+
+            alert('Realizar un card - ' + data.message)
+
         }
-    }
-
-
-    const logout = () => {
-        setUser([])
-        window.localStorage.removeItem('user')
     }
 
 
@@ -51,16 +53,28 @@ export const LoginProvider = ({ children }) => {
     }
 
 
+    const logout = () => {
+        setUser([])
+        window.localStorage.removeItem('user')
+    }
+
+
     useEffect(() => {
-        if( window.localStorage.getItem('user') ){
-            const userData = JSON.parse(window.localStorage.getItem('user'))
-            setUser(userData.user)
-            setToken(userData.token)
+        const data = window.localStorage.getItem('user')
+        const user = JSON.parse(data)
+
+        if( data ){
+
+            setUser([user.user])
+            setToken(user.token)
             setIsLoading(false)
+
         }else{
+
             setUser([])
             setToken(null)
             setIsLoading(false)
+
         }
     }, [])
 
@@ -69,10 +83,11 @@ export const LoginProvider = ({ children }) => {
         isLoading,
         user,
         token,
+
         login,
-        logout,
         register,
         confirm_register,
+        logout,
     }}>
         { children }
     </LoginContext.Provider>

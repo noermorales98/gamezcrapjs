@@ -39,10 +39,10 @@ export function Login() {
 
             <div className=''>
               <Formik
-                initialValues={{ email: '', password: '' }}
+                initialValues={{ userEmail: '', userPassword: '' }}
                 validationSchema={Yup.object({
-                  email: Yup.string().required('Es necesario colocar un email'),
-                  password: Yup.string().required('Es necesario colocar la contraseña'),
+                  userEmail: Yup.string().required('Es necesario colocar un email'),
+                  userPassword: Yup.string().required('Es necesario colocar la contraseña'),
                 })}
                 onSubmit={async (values, actions) => {
                   await login(values)
@@ -54,11 +54,11 @@ export function Login() {
                 {({ handleSubmit }) => (
                   <Form className='d-flex flex-column' onSubmit={handleSubmit}>
                     <label htmlFor="email" className='font-monospace'>Correo</label>
-                    <Field type="email" name="email"/>
+                    <Field type="email" name="userEmail"/>
                     <ErrorMessage component="p" name="email" className='text-danger' />
 
                     <label htmlFor="password" className='font-monospace'>Contraseña</label>
-                    <Field type="password" name="password" />
+                    <Field type="password" name="userPassword" />
                     <ErrorMessage component="p" name="password" className='text-danger' />
 
                     <button type='submit' className='btn mt-4'>Login</button>

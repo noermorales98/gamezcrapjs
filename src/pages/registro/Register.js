@@ -26,12 +26,12 @@ export function Register() {
 
                     <div className=''>
                         <Formik
-                            initialValues={{ nombres: '', apellidos: '', email: '', password: '' }}
+                            initialValues={{ userNombres: '', userApellidos: '', userEmail: '', userPassword: '' }}
                             validationSchema={Yup.object({
-                                nombres: Yup.string().required('Es necesario colocar tu información'),
-                                apellidos: Yup.string().required('Es necesario colocar tu información'),
-                                email: Yup.string().required('Es necesario colocar un email'),
-                                password: Yup.string().required('Es necesario colocar la contraseña'),
+                                userNombres: Yup.string().required('Es necesario colocar tu información'),
+                                userApellidos: Yup.string().required('Es necesario colocar tu información'),
+                                userEmail: Yup.string().required('Es necesario colocar un email'),
+                                userPassword: Yup.string().required('Es necesario colocar la contraseña'),
                             })}
                             onSubmit={async (values, actions) => {
                                 await register(values)
@@ -43,21 +43,21 @@ export function Register() {
                         >
                             {({ handleSubmit }) => (
                                 <Form className='d-flex flex-column' onSubmit={handleSubmit}>
-                                    <label htmlFor="nombres" className='font-monospace'>Nombres</label>
-                                    <Field name="nombres" placeholder="Ingresa tus nombres" />
-                                    <ErrorMessage component="p" name="nombres" className='text-danger' />
+                                    <label htmlFor="userNombres" className='font-monospace'>Nombres</label>
+                                    <Field name="userNombres" placeholder="Ingresa tus nombres" />
+                                    <ErrorMessage component="p" name="userNombres" className='text-danger' />
 
-                                    <label htmlFor="apellidos" className='font-monospace m-1 mt-2'>Apellidos</label>
-                                    <Field name="apellidos" placeholder="Ingresa tus apellidos" />
-                                    <ErrorMessage component="p" name="apellidos" className='text-danger' />
+                                    <label htmlFor="userApellidos" className='font-monospace m-1 mt-2'>Apellidos</label>
+                                    <Field name="userApellidos" placeholder="Ingresa tus apellidos" />
+                                    <ErrorMessage component="p" name="userApellidos" className='text-danger' />
 
-                                    <label htmlFor="email" className='font-monospace m-1 mt-2'>Correo</label>
-                                    <Field type="email" name="email" placeholder="ejemplo@ejemplo.com" />
-                                    <ErrorMessage component="p" name="email" className='text-danger' />
+                                    <label htmlFor="userEmail" className='font-monospace m-1 mt-2'>Correo</label>
+                                    <Field type="email" name="userEmail" placeholder="ejemplo@ejemplo.com" />
+                                    <ErrorMessage component="p" name="userEmail" className='text-danger' />
 
-                                    <label htmlFor="password" className='font-monospace m-1 mt-2'>Contraseña</label>
-                                    <Field type="password" name="password" placeholder="contraseña" />
-                                    <ErrorMessage component="p" name="password" className='text-danger' />
+                                    <label htmlFor="userPassword" className='font-monospace m-1 mt-2'>Contraseña</label>
+                                    <Field type="password" name="userPassword" placeholder="contraseña" />
+                                    <ErrorMessage component="p" name="userPassword" className='text-danger' />
 
                                     <button type='submit' className='btn mt-4'>Registrar</button>
                                 </Form>
