@@ -18,7 +18,7 @@ export function RenderUserData() {
             <span onClick={usermenu} className="usuario__header">
                 <div className="d-flex align-items-center pointer">
                     <p>Carim</p>
-                    <div className="user3d"><img src={user3d} /></div>
+                    <div className="user3d"><img src={user3d} alt="user3d" /></div>
                 </div>
                 <div className={menuState === 1 ? "user__menu" : "d-none"}>
                 <div className="user__menu-item">

@@ -1,4 +1,4 @@
-import { NavLink, Link, Outlet } from 'react-router-dom'
+import { NavLink, Outlet } from 'react-router-dom'
 
 import './Header.css'
 import { RenderUserData } from '../user_data/UserDataComponent'

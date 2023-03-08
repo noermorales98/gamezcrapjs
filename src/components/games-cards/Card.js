@@ -1,5 +1,4 @@
 import './Card.css';
-import ejemplo from '../../sources/img/example.jpeg'
 function Card({games}) {
   return (
     <div className='card__container'>
