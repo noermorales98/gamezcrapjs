@@ -11,6 +11,7 @@ import { Register } from './pages/registro/Register';
 import './App.css';
 import { LoginProvider } from './context/LoginContext';
 import { GamesProvider } from './context/GamesContext';
+import { UserProvider } from './context/UserContext';
 
 import { Routes, Route, Navigate } from 'react-router-dom'
 
@@ -33,22 +34,24 @@ function App() {
     <>
       <GamesProvider>
         <LoginProvider>
-          <Routes>
-            <Route path='/' element={Layout(<Header />)} >
-              <Route path='' element={<Home />} />
-              <Route path='acerca' element={<Acerca />} />
-              <Route path='funciona' element={<Funciona />} />
-              <Route path='contacto' element={<Contacto />} />
-              <Route exact path='ajustes' element={<Ajustes />} />
-              <Route exact path='favoritos' element={<Favoritos />} />
-              <Route exact path='confirm/:token' element={<Confirm />} />
-            </Route>
+          <UserProvider>
+            <Routes>
+              <Route path='/' element={Layout(<Header />)} >
+                <Route path='' element={<Home />} />
+                <Route path='acerca' element={<Acerca />} />
+                <Route path='funciona' element={<Funciona />} />
+                <Route path='contacto' element={<Contacto />} />
+                <Route exact path='ajustes' element={<Ajustes />} />
+                <Route exact path='favoritos' element={<Favoritos />} />
+                <Route exact path='confirm/:token' element={<Confirm />} />
+              </Route>
 
-            <Route exact path='/login' element={<Login />} />
-            <Route exact path='/registro' element={<Register />} />
+              <Route exact path='/login' element={<Login />} />
+              <Route exact path='/registro' element={<Register />} />
 
-            <Route path='*' element={<Navigate to={"/"} />} />
-          </Routes>
+              <Route path='*' element={<Navigate to={"/"} />} />
+            </Routes>
+          </UserProvider>
         </LoginProvider>
       </GamesProvider>
     </>

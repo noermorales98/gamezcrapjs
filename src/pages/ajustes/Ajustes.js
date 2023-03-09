@@ -1,21 +1,23 @@
 import './Ajustes.css'
 // import imagen from '../../sources/img/avatar.webp'
-import { useLogin } from '../../context/LoginContext';
+import { useUser } from '../../context/UserContext';
 
-import { Formik, Form, Field } from 'formik'
-// ErrorMessage
-// import { useEffect, useState } from 'react';
+import { Formik, Form, Field } from 'formik' // ErrorMessage
+import { useEffect, useState } from 'react';
 
 
 function Ajustes() {
 
-    const { user } = useLogin()
-    // const [userData, setUserData] = useState()
+    const [userData, setUserData] = useState()
+    const { getUserData } = useUser()
 
-    // useEffect(() => {
-
-    // })
-    console.log('Ajustes page: ',user)
+    useEffect(() => {
+        const { token } = JSON.parse(window.localStorage.getItem('user'))
+        console.log("🚀 ~ file: Ajustes.js:16 ~ useEffect ~ token:", token)
+        
+        // const res = getUserData()
+        // console.log("🚀 ~ file: Ajustes.js:16 ~ useEffect ~ res:", res)
+    }, [])
 
     return (
         <div className='main__container'>
@@ -27,7 +29,8 @@ function Ajustes() {
                                 <h1>Edita tu perfil</h1>
                                 <p>Información personal</p>
                                 <Formik
-                                    initialValues={user}
+                                    initialValues={userData}
+                                    enableReinitialize
                                 >
                                     <Form>
                                         <div className="name">
