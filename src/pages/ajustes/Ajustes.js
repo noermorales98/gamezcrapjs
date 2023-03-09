@@ -4,13 +4,13 @@ import { useLogin } from '../../context/LoginContext';
 
 import { Formik, Form, Field } from 'formik'
 // ErrorMessage
-// import { useEffect, useState } from 'react';
+ import { useEffect, useState } from 'react';
 
 
 function Ajustes() {
 
     const { user } = useLogin()
-    // const [userData, setUserData] = useState()
+    const [userData, setUserData] = useState()
 
     // useEffect(() => {
 
