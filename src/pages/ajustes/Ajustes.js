@@ -11,12 +11,10 @@ function Ajustes() {
     const [userData, setUserData] = useState()
     const { getUserData } = useUser()
 
-    useEffect(() => {
+    useEffect( () => {
         const { token } = JSON.parse(window.localStorage.getItem('user'))
-        console.log("🚀 ~ file: Ajustes.js:16 ~ useEffect ~ token:", token)
-        
-        // const res = getUserData()
-        // console.log("🚀 ~ file: Ajustes.js:16 ~ useEffect ~ res:", res)
+        const res =  getUserData(token)
+        console.log(typeof res)
     }, [])
 
     return (
