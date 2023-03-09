@@ -1,5 +1,4 @@
 import './Ajustes.css'
-// import imagen from '../../sources/img/avatar.webp'
 import { useLogin } from '../../context/LoginContext';
 
 import { Formik, Form, Field } from 'formik'
