@@ -6,7 +6,7 @@ import { useLogin } from '../../context/LoginContext';
 
 export function RenderUserData() {
 
-    const { logout } = useLogin()
+    const { logout, user } = useLogin()
     const [menuState, setMenuState] = React.useState(0);
 
     const usermenu = () => {
@@ -17,7 +17,7 @@ export function RenderUserData() {
         <>
             <span onClick={usermenu} className="usuario__header">
                 <div className="d-flex align-items-center pointer">
-                    <p>Carim</p>
+                    <p>{user.nombres}</p>
                     <div className="user3d"><img src={user3d} alt="user3d" /></div>
                 </div>
                 <div className={menuState === 1 ? "user__menu" : "d-none"}>

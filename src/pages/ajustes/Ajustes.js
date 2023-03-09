@@ -1,11 +1,20 @@
 import './Ajustes.css'
+// import imagen from '../../sources/img/avatar.webp'
 import { useLogin } from '../../context/LoginContext';
 
 import { Formik, Form, Field } from 'formik'
+// ErrorMessage
+// import { useEffect, useState } from 'react';
+
 
 function Ajustes() {
 
     const { user } = useLogin()
+    // const [userData, setUserData] = useState()
+
+    // useEffect(() => {
+
+    // })
     console.log('Ajustes page: ',user)
 
     return (
@@ -18,7 +27,8 @@ function Ajustes() {
                                 <h1>Edita tu perfil</h1>
                                 <p>Información personal</p>
                                 <Formik
-                                    initialValues={user}
+                                    initialValues={userData}
+                                    enableReinitialize
                                 >
                                     <Form>
                                         <div className="name">

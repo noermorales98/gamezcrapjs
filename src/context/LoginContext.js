@@ -26,7 +26,7 @@ export const LoginProvider = ({ children }) => {
 
             window.localStorage.setItem('user', JSON.stringify(data.data))
 
-            setUser([data.data.user])
+            setUser(data.data.user)
             setToken(data.data.token)
 
             setIsLoading(false)
@@ -65,7 +65,7 @@ export const LoginProvider = ({ children }) => {
 
         if( data ){
 
-            setUser([user.user])
+            setUser(user.user)
             setToken(user.token)
             setIsLoading(false)
 
