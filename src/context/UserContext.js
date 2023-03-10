@@ -13,8 +13,8 @@ export const UserProvider = ({children}) => {
 
 
     const getUserData = async (token) => {
-        const res = await getUserRequest()
-        return res.json()
+        const res = await getUserRequest(token)
+        return res
     }
 
 
