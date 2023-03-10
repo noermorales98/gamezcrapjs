@@ -1,5 +1,5 @@
 import './Ajustes.css'
-import { useUser } from '../../context/UserContext'
+import { useLogin } from '../../context/LoginContext';
 
 import { Formik, Form, Field } from 'formik' // ErrorMessage
 import * as Yup from 'yup'
@@ -8,20 +8,7 @@ import { useEffect, useState } from 'react';
 
 function Ajustes() {
 
-    const [userData, setUserData] = useState()
-    const [token, setToken] = useState()
-    const { getUserData, putUserData } = useUser()
-
-    useEffect( () => {
-        
-        (async () => {
-            const { token } = await JSON.parse(window.localStorage.getItem('user'))
-            setToken(token)
-            const res = await getUserData(token)
-            setUserData(res.data.data)
-        })();
-
-    }, [])
+    const { user, putUserData } = useLogin()
 
     return (
         <div className='main__container'>
@@ -33,15 +20,14 @@ function Ajustes() {
                                 <h1>Edita tu perfil</h1>
                                 <p>Información personal</p>
                                 <Formik
-                                    initialValues={userData}
+                                    initialValues={user}
                                     validationSchema={Yup.object({
                                         userNombres: Yup.string().required('Es necesario colocar un email'),
                                         userApellidos: Yup.string().required('Es necesario colocar la contraseña'),
                                     })}
                                     onSubmit={async (values, actions) => {
-                                        const { token } = await JSON.parse(window.localStorage.getItem('user'))
+                                        const token = await JSON.parse(window.localStorage.getItem('tokenKey'))
 
-                                        console.log(token, values)
                                         await putUserData(token, values)
                       
                                         actions.setSubmitting(false)

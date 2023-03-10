@@ -1,4 +1,6 @@
 import { loginRequest, registerRequest, confirmRegisterRequest } from "../api/Login";
+import { getUserRequest, setUserRequest } from "../api/User";
+
 import { createContext, useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -24,7 +26,7 @@ export const LoginProvider = ({ children }) => {
 
         if( !data.error ){
 
-            window.localStorage.setItem('user', JSON.stringify(data.data))
+            window.localStorage.setItem('tokenKey', JSON.stringify(data.data.token))
 
             setUser(data.data.user)
             setToken(data.data.token)
@@ -59,23 +61,55 @@ export const LoginProvider = ({ children }) => {
     }
 
 
-    useEffect(() => {
-        const data = window.localStorage.getItem('user')
-        const user = JSON.parse(data)
+    const getUserData = async (token) => {
+        const res = await getUserRequest(token)
 
-        if( data ){
+        if( res.status === 401){
+            window.localStorage.removeItem('tokenKey')
 
-            setUser(user.user)
-            setToken(user.token)
-            setIsLoading(false)
+            alert('Realizar un card - Su sesion a expirado, debe iniciar sesion de nuevo')
 
-        }else{
-
-            setUser([])
-            setToken(null)
-            setIsLoading(false)
-
+            navigate('/login')
         }
+
+        return res.data
+    }
+
+
+    const putUserData = async (token, data) => {
+        const res = await setUserRequest(token, data)
+        console.log("🚀 ~ file: LoginContext.js:82 ~ putUserData ~ res:", res)
+
+        if( res.status === 500 ){
+            alert('Realizar un card - Oops, hubo un error al intentar actualizar su informacion')
+        }
+
+        if( res.status === 401){
+            window.localStorage.removeItem('tokenKey')
+
+            alert('Realizar un card - Su sesion a expirado, debe iniciar sesion de nuevo')
+
+            navigate('/login')
+        }
+
+        setUser(data)
+
+        alert('Realizar un card - Todo correcto')
+    }
+
+
+    useEffect(() => {
+
+        (async () => {
+            const token = JSON.parse(window.localStorage.getItem('tokenKey'))
+            const res = await getUserData(token)
+            
+            setUser(res.data)
+            setToken(token)
+
+            setIsLoading(false)
+        })();
+        
     }, [])
 
 
@@ -88,6 +122,8 @@ export const LoginProvider = ({ children }) => {
         register,
         confirm_register,
         logout,
+
+        putUserData,
     }}>
         { children }
     </LoginContext.Provider>
