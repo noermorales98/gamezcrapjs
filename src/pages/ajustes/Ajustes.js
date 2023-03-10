@@ -1,25 +1,27 @@
 import './Ajustes.css'
-import { useLogin } from '../../context/LoginContext';
+import { useUser } from '../../context/UserContext'
 
-import { Formik, Form, Field } from 'formik'
-// ErrorMessage
- import { useEffect, useState } from 'react';
+import { Formik, Form, Field } from 'formik' // ErrorMessage
+import * as Yup from 'yup'
+import { useEffect, useState } from 'react';
 
 
 function Ajustes() {
 
-    const { user } = useLogin()
     const [userData, setUserData] = useState()
+    const [token, setToken] = useState()
+    const { getUserData, putUserData } = useUser()
 
     useEffect( () => {
-        const { token } = JSON.parse(window.localStorage.getItem('user'))
-        const res =  getUserData(token)
-        console.log(typeof res)
-    }, [])
-    // useEffect(() => {
+        
+        (async () => {
+            const { token } = await JSON.parse(window.localStorage.getItem('user'))
+            setToken(token)
+            const res = await getUserData(token)
+            setUserData(res.data.data)
+        })();
 
-    // })
-    console.log('Ajustes page: ',user)
+    }, [])
 
     return (
         <div className='main__container'>
@@ -32,42 +34,58 @@ function Ajustes() {
                                 <p>Información personal</p>
                                 <Formik
                                     initialValues={userData}
+                                    validationSchema={Yup.object({
+                                        userNombres: Yup.string().required('Es necesario colocar un email'),
+                                        userApellidos: Yup.string().required('Es necesario colocar la contraseña'),
+                                    })}
+                                    onSubmit={async (values, actions) => {
+                                        const { token } = await JSON.parse(window.localStorage.getItem('user'))
+
+                                        console.log(token, values)
+                                        await putUserData(token, values)
+                      
+                                        actions.setSubmitting(false)
+                                    }}
                                     enableReinitialize
                                 >
-                                    <Form>
-                                        <div className="name">
-                                            <label htmlFor="name">Nombre</label>
-                                            <Field type="text" name="nombres" />
-                                        </div>
-
-                                        <div className="apellido">
-                                            <label htmlFor="lastname">Apellido</label>
-                                            <Field type="text" name="apellidos" />
-                                        </div>
-
-                                        <div className="password">
-                                            <p>Cambia tu contraseña</p>
-
-                                            <div className="oldpassword">
-                                                <label htmlFor="password">Contraseña anterior</label>
-                                                <Field type="password" name="password" />
+                                    {({ handleSubmit }) => (
+                                        <Form>
+                                            <div className="name">
+                                                <label htmlFor="name">Nombre</label>
+                                                <Field type="text" name="userNombres" />
                                             </div>
 
-                                            <div className="login__newpassword">
-                                                <div className="newpassword">
-                                                    <label htmlFor="newpassword">Nueva contraseña</label>
-                                                    <Field type="password" name="newpassword" />
-                                                </div>
-
-                                                <div className="confirmpassword">
-                                                    <label htmlFor="confirmpassword">Confirmar contraseña</label>
-                                                    <Field type="password" name="confirmpassword" />
-                                                </div>
+                                            <div className="apellido">
+                                                <label htmlFor="lastname">Apellido</label>
+                                                <Field type="text" name="userApellidos" />
                                             </div>
 
-                                            <button type="submit">Guardar</button>
-                                        </div>
-                                    </Form>
+                                            <hr />
+
+                                            <div className="password">
+                                                <p>Cambia tu contraseña</p>
+
+                                                <div className="oldpassword">
+                                                    <label htmlFor="password">Contraseña anterior</label>
+                                                    <Field type="password" name="password" />
+                                                </div>
+
+                                                <div className="login__newpassword">
+                                                    <div className="newpassword">
+                                                        <label htmlFor="newpassword">Nueva contraseña</label>
+                                                        <Field type="password" name="newpassword" />
+                                                    </div>
+
+                                                    <div className="confirmpassword">
+                                                        <label htmlFor="confirmpassword">Confirmar contraseña</label>
+                                                        <Field type="password" name="confirmpassword" />
+                                                    </div>
+                                                </div>
+
+                                                <button type="submit">Guardar</button>
+                                            </div>
+                                        </Form>
+                                    )}
                                 </Formik>
                             </div>
                         </div>

@@ -18,9 +18,12 @@ export const UserProvider = ({children}) => {
     }
 
 
-    const putUserData = async () => {
-        const res = await setUserRequest()
-        return res.json()
+    const putUserData = async (token, data) => {
+        console.log("🚀 ~ file: UserContext.js:22 ~ putUserData ~ data:", data)
+        console.log("🚀 ~ file: UserContext.js:22 ~ putUserData ~ token:", token)
+        
+        const res = await setUserRequest(token, data)
+        console.log("🚀 ~ file: UserContext.js:23 ~ putUserData ~ res:", res)
     }
 
 
