@@ -1,7 +1,7 @@
 import './Card.css';
 function Card({games}) {
   return (
-    <a href="/" className='card__container' style={{background: `url(${games.thumb})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat'}}>
+    <div className='card__container' style={{background: `url(${games.thumb})`, backgroundSize: '100% 100%', backgroundRepeat: 'no-repeat'}}>
       <div className='card__info'>
         <p className='game-title'>{games.title}</p>
         <div className='d-flex gap-1'>
@@ -9,7 +9,7 @@ function Card({games}) {
         <p className='game-normal-price'>${games.normalPrice}</p>
         </div>
       </div>
-    </a>
+    </div>
   );
 }
 export default Card;
