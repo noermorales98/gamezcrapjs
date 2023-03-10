@@ -1,7 +1,6 @@
 import Card from '../../components/games-cards/Card';
 import { useGames } from '../../context/GamesContext';
 import './Home.css'
-// import imagen from "../../sources/img/GameZcrap.png";
 function Home() {
 
     const { games } = useGames();
@@ -61,11 +60,6 @@ function Home() {
                         {games.map(game => (
                             <Card games={game} key={game.dealID} />
                         ))}
-
-                        {/* <Card nombre="GTA V" imagen="https://assets.reedpopcdn.com/gta-1621612236056.jpg/BROK/resize/1200x1200%3E/format/jpg/quality/70/gta-1621612236056.jpg" />
-                        <Card nombre="Halo 5" imagen="https://store-images.s-microsoft.com/image/apps.50236.69279545232152045.f1a4a87c-fcc9-4b7c-a620-f6c56eb2d5ad.f0eeb1d4-a30c-4a21-8bcb-46ed84669b5c?q=90&w=480&h=270" />
-                        <Card nombre="FIFA 21" imagen="https://i.blogs.es/5fe30d/fifa-21-intros_1/1366_2000.jpeg" />
-                        <Card nombre="League of Legends" imagen="https://www.leagueoflegends.com/static/open-graph-2e582ae9fae8b0b396ca46ff21fd47a8.jpg" /> */}
                     </div>
                 </div>
             </div>

@@ -121,9 +121,11 @@ background: radial-gradient(circle, rgba(25,52,93,1) 0%, rgba(3,17,31,1) 68%);
 }
 
 .games__cards {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    display: flex;
     gap: 1rem;
+    justify-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .games__title {
@@ -149,10 +151,11 @@ background: radial-gradient(circle, rgba(25,52,93,1) 0%, rgba(3,17,31,1) 68%);
 
 @media screen and (max-width: 1300px) {
     .games__cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
         gap: 1rem;
         justify-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     .card__container{
         margin-bottom: 1rem;
@@ -170,13 +173,21 @@ background: radial-gradient(circle, rgba(25,52,93,1) 0%, rgba(3,17,31,1) 68%);
 @media screen and (max-width: 1024px) {
 
     .games__cards{
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        gap: 1rem;
+        justify-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
 @media screen and (max-width: 750px) {
 
     .games__cards{
-        grid-template-columns: repeat(1, 1fr);
+        display: flex;
+        gap: 1rem;
+        justify-items: center;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
