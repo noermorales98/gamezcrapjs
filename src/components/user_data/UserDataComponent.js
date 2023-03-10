@@ -8,6 +8,8 @@ export function RenderUserData() {
 
     const { logout, user } = useLogin()
     const [menuState, setMenuState] = React.useState(0);
+    
+    console.log("🚀 ~ file: UserDataComponent.js:10 ~ RenderUserData ~ user:", user)
 
     const usermenu = () => {
         setMenuState(menuState === 0 ? 1 : 0);
@@ -17,7 +19,7 @@ export function RenderUserData() {
         <>
             <span onClick={usermenu} className="usuario__header">
                 <div className="d-flex align-items-center pointer">
-                    <p>{user.nombres}</p>
+                    <p>{user.userNombres}</p>
                     <div className="user3d"><img src={user3d} alt="user3d" /></div>
                 </div>
                 <div className={menuState === 1 ? "user__menu" : "d-none"}>
