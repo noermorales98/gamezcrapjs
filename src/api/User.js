@@ -8,7 +8,7 @@ export const setUserRequest = async (token, data) => {
     console.log("🚀 ~ file: User.js:8 ~ setUserRequest ~ data:", data)
     console.log("🚀 ~ file: User.js:8 ~ setUserRequest ~ token:", token)
     try {
-        return await axios.put(`http://${server}/api/v1/profile/edit`, {headers: {'Authorization': `Bearer ${token}`}})
+        return await axios.put(`http://${server}/api/v1/profile/edit`, data, {headers: {'Authorization': `Bearer ${token}`}})
     } catch (err) {
         console.warn(err)
     }
