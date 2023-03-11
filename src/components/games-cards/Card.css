@@ -54,7 +54,7 @@
 }
 
 .card__info:hover::after {
-    content: "Ver más";
+    content: "";
     font-weight: bold;
     font-size: .8rem;
     color: rgb(255, 255, 255);
@@ -112,10 +112,18 @@
     justify-content: center;
 }
 
-.favorite{
-    display: block;
-    color: white;
+
+
+.add-favorite{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 15px;
-    right: 15px;
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    background-color: #0073d1;
+    border-radius: 50%;
+    bottom: 10px;
+    right: 10px;
 }
