@@ -10,6 +10,7 @@
     transition: all .3s;
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .card__container:hover {
@@ -56,7 +57,7 @@
     content: "Ver más";
     font-weight: bold;
     font-size: .8rem;
-    color: rgb(204, 160, 0);
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
     display: flex;
     justify-content: center;
@@ -109,4 +110,12 @@
     color: white;
     font-size: 1rem;
     justify-content: center;
+}
+
+.favorite{
+    display: block;
+    color: white;
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
