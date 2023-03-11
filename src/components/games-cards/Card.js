@@ -20,10 +20,10 @@ function Card({ games }) {
       onMouseLeave={handleMouseLeave}
     >
       <div className='card__info'>
-        <p className='game-title'>{games.title}</p>
+        <p className='game-title'>{games.title || games.external}</p>
         <div className='d-flex gap-1'>
-          <p className="game-sale-price">${games.salePrice}</p>
-          <p className='game-normal-price'>${games.normalPrice}</p>
+          <p className="game-sale-price">${games.salePrice || games.cheapest}</p>
+          <p className={games.normalPrice == null ? "d-none" : "game-normal-price"}>${games.normalPrice}</p>
           {showButton && (
             <div className='add-favorite'>
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-star" viewBox="0 0 16 16">
