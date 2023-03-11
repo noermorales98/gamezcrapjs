@@ -15,7 +15,6 @@
 
 .card__container:hover {
     background: #ffffffc3;
-    color: black;
     box-shadow: 1px 1px 30px rgba(255, 255, 255, 0.403);
     background-size: 100% 100%;
     background-repeat: no-repeat;
@@ -44,7 +43,7 @@
     backdrop-filter: blur(15px);
     border-radius: 1rem;
     background: #092b3d99;
-    transition: all .1s;
+    transition: all .5s;
 }
 
 .card__info:hover {
@@ -126,4 +125,23 @@
     border-radius: 50%;
     bottom: 10px;
     right: 10px;
+    color: white;
+    transition: all .3s;
+}
+
+.add-favorite:hover{
+    color: white;
+    transform: rotate(90deg);
+    width: 50px;
+    height: 50px;
+    transition: all .3s;
+}
+
+.add-favorite:active{
+    color: white;
+    background: #014a86;
+    transform: rotate(0deg);
+    width: 50px;
+    height: 50px;
+    transition: all .3s;
 }
