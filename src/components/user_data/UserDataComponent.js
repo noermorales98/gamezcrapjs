@@ -9,8 +9,6 @@ export function RenderUserData() {
     const { logout, user } = useLogin()
     const [menuState, setMenuState] = React.useState(0);
     
-    console.log("🚀 ~ file: UserDataComponent.js:10 ~ RenderUserData ~ user:", user)
-
     const usermenu = () => {
         setMenuState(menuState === 0 ? 1 : 0);
     }

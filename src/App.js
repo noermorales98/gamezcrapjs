@@ -5,6 +5,7 @@ import Home from './pages/home/Home';
 import { Acerca } from './pages/acerca_de/Acerca'
 import { Funciona } from './pages/como_funciona/Funciona'
 import { Contacto } from './pages/contacto/Contacto'
+import { Buscar } from './pages/buscar/Buscar';
 import { Login } from './pages/login/Login';
 import { Register } from './pages/registro/Register';
 
@@ -41,6 +42,7 @@ function App() {
                 <Route path='contacto' element={<Contacto />} />
                 <Route exact path='ajustes' element={<Ajustes />} />
                 <Route exact path='favoritos' element={<Favoritos />} />
+                <Route exact path='resultado' element={<Buscar />} />
                 <Route exact path='confirm/:token' element={<Confirm />} />
               </Route>
 
