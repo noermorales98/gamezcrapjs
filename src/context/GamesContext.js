@@ -1,54 +1,69 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { getGamesRequest, getGameRequest } from "../api/Games";
+import { getGamesRequest, getGameRequest, setGameRequest } from "../api/Games";
 
-const GamesContext = createContext()
+const GamesContext = createContext();
 
 export const useGames = () => {
-    const context = useContext(GamesContext)
-    return context
-}
+    const context = useContext(GamesContext);
+    return context;
+};
 
-export const GamesProvider = ({children}) => {
+export const GamesProvider = ({ children }) => {
 
-    const [games, setGames] = useState([])
-    const [game, setGame] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
 
-    const navigate = useNavigate()
+    const [games, setGames] = useState([]);
+    const [game, setGame] = useState([]);
+    const [fav, setFav] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const navigate = useNavigate();
 
 
     const getGames = async () => {
-        const res = await getGamesRequest()
-        setGames(res.data.data)
-    }
+        const res = await getGamesRequest();
+        setGames(res.data.data);
+    };
 
 
     const getGame = async (title) => {
-        setIsLoading(true)
+        setIsLoading(true);
 
-        const res = await getGameRequest(title)
-        setGame(res.data.data)
+        const res = await getGameRequest(title);
+        setGame(res.data.data);
 
-        navigate('/resultado')
+        navigate("/resultado");
 
-        setIsLoading(false)
-    }
+        setIsLoading(false);
+    };
+
+
+    const setFavorite = async (id, title, img) => {
+        
+        const token = JSON.parse(window.localStorage.getItem('tokenKey'))
+        const res = await setGameRequest(token, id, title, img);
+        console.log("🚀 ~ file: GamesContext.js:42 ~ setFavorite ~ res:", res);
+
+    };
 
 
     useEffect(() => {
-        getGames()
-    }, [])
+        getGames();
+    }, []);
 
-    return <GamesContext.Provider value={{
-        games,
-        game,
-        isLoading,
 
-        getGames,
-        getGame,
-    }}>
-        { children }
-    </GamesContext.Provider>
-}
+    return (
+        <GamesContext.Provider value={{
+            games,
+            game,
+            isLoading,
+
+            getGames,
+            getGame,
+            setFavorite,
+        }}>
+            {children}
+        </GamesContext.Provider>
+    );
+};
