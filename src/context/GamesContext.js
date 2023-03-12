@@ -39,11 +39,10 @@ export const GamesProvider = ({ children }) => {
     };
 
 
-    const setFavorite = async (id, title, img) => {
+    const setFavorite = async (token, id, title, img) => {
         
-        const token = JSON.parse(window.localStorage.getItem('tokenKey'))
         const res = await setGameRequest(token, id, title, img);
-        console.log("🚀 ~ file: GamesContext.js:42 ~ setFavorite ~ res:", res);
+        console.log("🚀 ~ file: GamesContext.js:42 ~ setFavorite ~ res:", res.response);
 
     };
 

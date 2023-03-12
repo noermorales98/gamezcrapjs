@@ -56,8 +56,9 @@ export const LoginProvider = ({ children }) => {
 
 
     const logout = () => {
+        window.localStorage.removeItem('tokenKey')
         setUser([])
-        window.localStorage.removeItem('user')
+        setToken(null)
     }
 
 
@@ -102,10 +103,13 @@ export const LoginProvider = ({ children }) => {
 
         (async () => {
             const token = JSON.parse(window.localStorage.getItem('tokenKey'))
-            const res = await getUserData(token)
             
-            setUser(res.data)
-            setToken(token)
+            if( token ){
+                const res = await getUserData(token)
+            
+                setUser(res.data)
+                setToken(token)
+            }
 
             setIsLoading(false)
         })();

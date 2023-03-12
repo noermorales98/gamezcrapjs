@@ -8,7 +8,7 @@ export const getGameRequest = async (title) => await axios.get(`http://${server}
 
 export const setGameRequest = async (token, id, title, img) => {
     try {
-        return await axios.post(`http://${server}/api/v1/favorites/add`, {headers: {'Authorization': `Bearer ${token}`}, data: {gameID: `${id}`, title: `${title}`, thumb: `${img}`}})
+        return await axios.post(`http://${server}/api/v1/favorites/add`, {data: {gameID: `${id}`, title: `${title}`, thumb: `${img}`}}, {headers: {'Authorization': `Bearer ${token}`}})
     } catch (err) {
         return err
     }
